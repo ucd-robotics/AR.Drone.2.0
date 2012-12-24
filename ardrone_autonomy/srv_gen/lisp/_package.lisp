@@ -1,0 +1,15 @@
+(cl:defpackage ardrone_autonomy-srv
+  (:use )
+  (:export
+   "LEDANIM"
+   "<LEDANIM-REQUEST>"
+   "LEDANIM-REQUEST"
+   "<LEDANIM-RESPONSE>"
+   "LEDANIM-RESPONSE"
+   "CAMSELECT"
+   "<CAMSELECT-REQUEST>"
+   "CAMSELECT-REQUEST"
+   "<CAMSELECT-RESPONSE>"
+   "CAMSELECT-RESPONSE"
+  ))
+

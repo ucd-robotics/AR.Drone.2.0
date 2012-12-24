@@ -1,0 +1,20 @@
+<package>
+  <description brief="sensor_data">
+
+     sensor_data
+
+  </description>
+  <author>AaronCz</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/sensor_data</url>
+  <depend package="roslib"/>
+  <depend package="roscpp"/>
+  <depend package="image_transport"/>
+  <depend package="sensor_msgs"/>
+  <depend package="tf"/>
+  <depend package="camera_info_manager"/>
+
+</package>
+
+
