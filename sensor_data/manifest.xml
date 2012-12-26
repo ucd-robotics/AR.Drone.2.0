@@ -10,10 +10,9 @@
   <url>http://ros.org/wiki/sensor_data</url>
   <depend package="roslib"/>
   <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
   <depend package="image_transport"/>
-  <depend package="sensor_msgs"/>
-  <depend package="tf"/>
-  <depend package="camera_info_manager"/>
 
 </package>
 

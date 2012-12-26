@@ -1,0 +1,15 @@
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/clean-test-results.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/rosbuild_precompile.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/rospack_genmsg.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/rospack_genmsg_libexe.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/rospack_gensrv.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/test.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/test-future.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/test-results.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/test-results-run.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/sensor_data/build/CMakeFiles/tests.dir

@@ -6,6 +6,7 @@
 
 ### Updates
 
+- *November 9 2012*: Critical Bug in sending configurations to drone fixed and more parameters are supported ([More info](https://github.com/AutonomyLab/ardrone_autonomy/issues/24)). Seperate topic for magnetometer data added ([More info](https://github.com/AutonomyLab/ardrone_autonomy/pull/25)).
 - *September 5 2012*: Experimental automatic IMU bias removal.
 - *August 27 2012*: Thread-safe SDK data access. Synchronized `navdata` and `camera` topics.
 - *August 20 2012*: The driver is now provides ROS standard camera interface.
@@ -33,6 +34,8 @@ The installation follows the same steps needed usually to compile a ROS driver.
         $ roscd ardrone_autonomy
         ```
 
+**NOTE (For advanced users):** Instead of the `master` branch you can use the `dev-unstable` branch for the latest _unstable_ code which may contain bug fixes or new features. This is the branch that all developments happen on. Please use this branch to submit pull requests.
+ 
 * Compile the AR-Drone SDK: The driver contains a slightly patched version of AR-Drone 2.0 SDK which is located in `ARDroneLib` directory. To compile it, execute the `./build_sdk.sh`. Any system-wide dependency will be managed by the SDK's build script. You may be asked to install some packages during the installation procedure (e.g `daemontools`). You can verify the success of the SDK's build by checking the `lib` folder.
 
         ```bash
@@ -85,11 +88,15 @@ Information received from the drone will be published to the `ardrone/navdata` t
 * `altd`: Estimated altitude (mm)
 * `vx`, `vy`, `vz`: Linear velocity (mm/s) [TBA: Convention]
 * `ax`, `ay`, `az`: Linear acceleration (g) [TBA: Convention]
-* `tm`: Timestamp of the data returned by the Drone
+* `tm`: Timestamp of the data returned by the Drone returned as a packed uint32 (sec:11; usec:21)
 
 ### IMU data
 
 The linear acceleration, angular velocity and orientation from the `Navdata` is also published to a standard ROS [`sensor_msgs/Imu`](http://www.ros.org/doc/api/sensor_msgs/html/msg/Imu.html) message. The units are all metric and the reference frame is in `Base` frame. This topic is experimental. The covariance values are specified by specific parameters.
+
+### Megnetometer Data
+
+The normalized magnetometer readings are also published to `ardrone/mag` topic as a standard ROS [`geometry_msgs/Vector3Stamped`](http://www.ros.org/doc/api/geometry_msgs/html/msg/Vector3Stamped.html) message.
 
 ### Cameras
 
@@ -179,25 +186,28 @@ Calling `ardrone/flattrim` service without any parameter will send a "Flat Trim"
 
 ## Parameters
 
-The parameters listed below are named according to AR-Drone's SDK 2.0 configuration. Unless you set the parameters using `rosparam` or in your `launch` file, the default values will be used. These values are applied during driver's initialization phase. Please refer to AR-Drone SDK 2.0's [developer's guide](https://projects.ardrone.org/projects/show/ardrone-api/) for information about valid values.
+### AR-Drone Specific Parameters
+
+The parameters listed below are named according to AR-Drone's SDK 2.0 configuration. Unless you set the parameters using `rosparam` or in your `launch` file, the default values will be used. These values are applied during driver's initialization phase. Please refer to AR-Drone SDK 2.0's [developer's guide](https://projects.ardrone.org/projects/show/ardrone-api/) for information about valid values. Not all the parameters will be needed during regular usage of the AR-Drone, please consult the example lanuch file `launch/ardrone.launch` for frequent parameters.
+
+    altitude, altitude_max, altitude_min, ardrone_name, autonomous_flight, bitrate, bitrate_ctrl_mode, 
+    bitrate_storage, codec_fps, com_watchdog, control_iphone_tilt, control_level, control_vz_max, 
+    control_yaw, detect_type, detections_select_h, detections_select_v, detections_select_v_hsync, 
+    enemy_colors, enemy_without_shell, euler_angle_max, flight_anim, flight_without_shell, flying_mode, 
+    groundstripe_colors, hovering_range, indoor_control_vz_max, indoor_control_yaw, indoor_euler_angle_max, 
+    latitude, leds_anim, longitude, manual_trim, max_bitrate, max_size, navdata_demo, navdata_options, 
+    nb_files, outdoor, outdoor_control_vz_max, outdoor_control_yaw, outdoor_euler_angle_max, output, 
+    owner_mac, ssid_multi_player, ssid_single_player, travelling_enable, travelling_mode, ultrasound_freq, 
+    ultrasound_watchdog, userbox_cmd, video_channel, video_codec, video_enable, video_file_index, 
+    video_live_socket, video_on_usb, video_slices, vision_enable, wifi_mode, wifi_rate
+
+[This wiki page](https://github.com/AutonomyLab/ardrone_autonomy/wiki/AR-Drone-Parameters) includes more information about each of above parameters.
+ 
+### Other Parameters
+
+These parameters control the behaviour of the driver.
 
 * `drone_frame_id` - The "frame_id" prefix to be used in all `tf` frame names - default: "ardrone_base"
-* `bitrate_ctrl_mode` - default: DISABLED
-* `max_bitrate` - (AR-Drone 2.0 only) Default: 4000 Kbps
-* `bitrate` -  Default: 4000 Kbps
-* `outdoor` - Default: 0
-* `flight_without_shell` - Default: 1
-* `altitude_max` - Default: 3000 mm
-* `altitude_min` - Default: 100 mm
-* `control_vz_max` - Default: 850.0 mm/s
-* `control_yaw` - Default: 100 degrees/?
-* `euler_angle_max` - Default: 12 degrees
-* `navdata_demo` - Default: 1
-* `detect_type` - Default: `CAD_TYPE_MULTIPLE_DETECTION_MODE`
-* `enemy_colors` - Default: `ARDRONE_DETECTION_COLOR_ORANGE_YELLOW`
-* `enemy_without_shell` - Default: 0
-* `detections_select_h` - Default: `TAG_TYPE_MASK(TAG_TYPE_SHELL_TAG_V2)` (The macro is defined in `ardrone_api.h`)
-* `detections_select_v_hsync` - Default: `TAG_TYPE_MASK(TAG_TYPE_BLACK_ROUNDEL)` (The macro is defined in `ardrone_api.h`)
 * `root_frame` - The default root in drone's `tf` tree (0: _link, 1: _frontcam, 2: _bottomcam) - Default: 0
 * `cov/imu_la`, `cov/imu_av` & `cov/imu_or`: List of 9 covariance values to be used in `imu`'s topic linear acceleration, angular velocity and orientation fields respectively - Default: 0.0 for all members (Please check the FAQ section for a sample launch file that shows how to set these values)
 * `do_imu_calibration`: [EXPERIMENTAL] Should the drone cancel the biases in IMU data - Default: 0
@@ -208,15 +218,19 @@ The Parrot's license, copyright and disclaimer for `ARDroneLib` are included wit
 
 ## Contributors
 
-- [Rachel Brindle](https://github.com/younata) - [Enhanced Navdata for AR-Drone 2.0](https://github.com/AutonomyLab/ardrone_autonomy/pull/2)
+- [Mike Hamer](https://github.com/mikehamer) - Added support for proper SDK2 way of configuring the Drone via parameter (critical bug fix). [More Info](https://github.com/AutonomyLab/ardrone_autonomy/pull/26)
+- [Sameer Parekh](https://github.com/sameerparekh) - [Seperate Magnetometer Topic](https://github.com/AutonomyLab/ardrone_autonomy/pull/25)
 - [Devmax](https://github.com/devmax) - [Flat Trim](https://github.com/AutonomyLab/ardrone_autonomy/issues/18) + Various
 comments for enhancements
+- [Rachel Brindle](https://github.com/younata) - [Enhanced Navdata for AR-Drone 2.0](https://github.com/AutonomyLab/ardrone_autonomy/pull/2)
 
 ## FAQ
 
 ### How can I report a bug, submit patches or ask for a feature?
 
 `github` offers a nice and convenient issue tracking and social coding platform, it can be used for bug reports and pull/feature request. This is the preferred method. You can also contact the author directly.
+
+If you want to submit a pull request, please submit to `dev-unstable` branch.
 
 ### Why the `ARDroneLib` has been patched?
 
@@ -279,20 +293,7 @@ After successful calibration, press the `commit` button in the UI. The driver wi
 
 ### Can I see a sample ardrone node in a launch file to learn how to set parameters?
 
-
-```xml
-
-<node name="ardrone_driver" pkg="ardrone_autonomy" type="ardrone_driver" output="screen">
-    <param name="max_bitrate" value="2000" />
-    <param name="bitrate" value="2000" />
-    <param name="do_imu_caliberation" value="true" />
-    <param name="tf_prefix" value="mydrone" />
-    <!-- Covariance Values (3x3 matrices reshaped to 1x9)-->
-    <rosparam param="cov/imu_la">[0.1, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.1]</rosparam>
-    <rosparam param="cov/imu_av">[1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]</rosparam>
-    <rosparam param="cov/imu_or">[1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 100000.0]</rosparam>
-</node>
-```
+Yes, you can check the `launch` folder for sample lanuch file.
 
 ## TODO
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/aaroncz/fuerte_workspace/ardrone/ardrone_autonomy
+# Install script for directory: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/ardrone_autonomy
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/aaroncz/fuerte_workspace/ardrone/ardrone_autonomy/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/ardrone_autonomy/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/aaroncz/fuerte_workspace/ardrone/ardrone_autonomy/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/ardrone_autonomy/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
