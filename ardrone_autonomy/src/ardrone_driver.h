@@ -7,21 +7,13 @@
 #include <camera_info_manager/camera_info_manager.h>
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/Imu.h>
-#include <geometry_msgs/Vector3Stamped.h>
 #include <std_srvs/Empty.h>
 #include <ardrone_autonomy/Navdata.h>
 #include "ardrone_sdk.h"
 #include <vector>
-#include <utils/ardrone_gen_ids.h>
-#include <ardrone_tool/ardrone_version.h>
-#include <ardrone_tool/ardrone_tool.h>
-
 
 #define _DEG2RAD 0.01745331111
 #define _RAD2DEG 57.2957184819
-
-#define DRIVER_USERNAME "ardrone_driver"
-#define DRIVER_APPNAME "ardrone_driver"
 
 enum ROOT_FRAME
 {
@@ -47,8 +39,7 @@ private:
     void publish_tf();
     bool readCovParams(std::string param_name, boost::array<double, 9> &cov_array);
     double calcAverage(std::vector<double> &vec);
-    void resetCaliberation();   
-    void configureDrone();
+    void resetCaliberation();    
 
     ros::NodeHandle node_handle;
 	ros::Subscriber cmd_vel_sub;
@@ -65,7 +56,6 @@ private:
 
     ros::Publisher navdata_pub;
     ros::Publisher imu_pub;
-    ros::Publisher mag_pub;
 
     tf::TransformBroadcaster tf_broad;
 
@@ -115,7 +105,6 @@ private:
 
     // Huge part of IMU message is constant, let's fill'em once.
     sensor_msgs::Imu imu_msg;
-    geometry_msgs::Vector3Stamped mag_msg;
 
     // Manual IMU caliberation
     bool do_caliberation;
