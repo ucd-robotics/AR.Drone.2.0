@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -g     -pthread CMakeFiles/up_down.dir/src/slow_up_and_down.o  -o ../bin/up_down -rdynamic -L/opt/ros/fuerte/lib -lroslib -lroscpp -lrostime -lrosconsole -lroscpp_serialization -lxmlrpcpp -Wl,-rpath,/opt/ros/fuerte/lib 

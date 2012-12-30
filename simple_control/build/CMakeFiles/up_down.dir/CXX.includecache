@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/simple_control/src/slow_up_and_down.cpp
+ardrone_driver.h
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/simple_control/src/ardrone_driver.h
+teleop_twist.h
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/simple_control/src/teleop_twist.h
+
