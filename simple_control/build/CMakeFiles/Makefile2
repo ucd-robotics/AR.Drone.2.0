@@ -517,41 +517,6 @@ clean: CMakeFiles/tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/up_down.dir
-
-# All Build rule for target.
-CMakeFiles/up_down.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-	$(MAKE) -f CMakeFiles/up_down.dir/build.make CMakeFiles/up_down.dir/depend
-	$(MAKE) -f CMakeFiles/up_down.dir/build.make CMakeFiles/up_down.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/simple_control/build/CMakeFiles  1
-	@echo "Built target up_down"
-.PHONY : CMakeFiles/up_down.dir/all
-
-# Include target in all.
-all: CMakeFiles/up_down.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/up_down.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/simple_control/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/up_down.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/simple_control/build/CMakeFiles 0
-.PHONY : CMakeFiles/up_down.dir/rule
-
-# Convenience name for target.
-up_down: CMakeFiles/up_down.dir/rule
-.PHONY : up_down
-
-# clean rule for target.
-CMakeFiles/up_down.dir/clean:
-	$(MAKE) -f CMakeFiles/up_down.dir/build.make CMakeFiles/up_down.dir/clean
-.PHONY : CMakeFiles/up_down.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/up_down.dir/clean
-.PHONY : clean
-
-#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

@@ -290,34 +290,6 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
-#=============================================================================
-# Target rules for targets named up_down
-
-# Build rule for target.
-up_down: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 up_down
-.PHONY : up_down
-
-# fast build rule for target.
-up_down/fast:
-	$(MAKE) -f CMakeFiles/up_down.dir/build.make CMakeFiles/up_down.dir/build
-.PHONY : up_down/fast
-
-# target to build an object file
-src/slow_up_and_down.o:
-	$(MAKE) -f CMakeFiles/up_down.dir/build.make CMakeFiles/up_down.dir/src/slow_up_and_down.o
-.PHONY : src/slow_up_and_down.o
-
-# target to preprocess a source file
-src/slow_up_and_down.i:
-	$(MAKE) -f CMakeFiles/up_down.dir/build.make CMakeFiles/up_down.dir/src/slow_up_and_down.i
-.PHONY : src/slow_up_and_down.i
-
-# target to generate assembly for a file
-src/slow_up_and_down.s:
-	$(MAKE) -f CMakeFiles/up_down.dir/build.make CMakeFiles/up_down.dir/src/slow_up_and_down.s
-.PHONY : src/slow_up_and_down.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -341,10 +313,6 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
-	@echo "... up_down"
-	@echo "... src/slow_up_and_down.o"
-	@echo "... src/slow_up_and_down.i"
-	@echo "... src/slow_up_and_down.s"
 .PHONY : help
 
 
