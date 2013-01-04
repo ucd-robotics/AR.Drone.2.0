@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/Camera.cpp
+stdafx.h
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/stdafx.h
+

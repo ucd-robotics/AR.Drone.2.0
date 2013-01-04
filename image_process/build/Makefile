@@ -161,6 +161,19 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
+# Target rules for targets named drone_image
+
+# Build rule for target.
+drone_image: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 drone_image
+.PHONY : drone_image
+
+# fast build rule for target.
+drone_image/fast:
+	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/build
+.PHONY : drone_image/fast
+
+#=============================================================================
 # Target rules for targets named rosbuild_precompile
 
 # Build rule for target.
@@ -290,6 +303,21 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+# target to build an object file
+src/drone_image.o:
+	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/src/drone_image.o
+.PHONY : src/drone_image.o
+
+# target to preprocess a source file
+src/drone_image.i:
+	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/src/drone_image.i
+.PHONY : src/drone_image.i
+
+# target to generate assembly for a file
+src/drone_image.s:
+	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/src/drone_image.s
+.PHONY : src/drone_image.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -301,6 +329,7 @@ help:
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
+	@echo "... drone_image"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
@@ -313,6 +342,9 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
+	@echo "... src/drone_image.o"
+	@echo "... src/drone_image.i"
+	@echo "... src/drone_image.s"
 .PHONY : help
 
 

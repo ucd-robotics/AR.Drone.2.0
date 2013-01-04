@@ -3,6 +3,7 @@
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/clean-test-results.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/drone_image.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rosbuild_precompile.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rosbuild_premsgsrvgen.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rospack_genmsg.dir

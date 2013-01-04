@@ -205,6 +205,41 @@ clean: CMakeFiles/clean-test-results.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/drone_image.dir
+
+# All Build rule for target.
+CMakeFiles/drone_image.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/depend
+	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  1
+	@echo "Built target drone_image"
+.PHONY : CMakeFiles/drone_image.dir/all
+
+# Include target in all.
+all: CMakeFiles/drone_image.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/drone_image.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/drone_image.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
+.PHONY : CMakeFiles/drone_image.dir/rule
+
+# Convenience name for target.
+drone_image: CMakeFiles/drone_image.dir/rule
+.PHONY : drone_image
+
+# clean rule for target.
+CMakeFiles/drone_image.dir/clean:
+	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/clean
+.PHONY : CMakeFiles/drone_image.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/drone_image.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/rosbuild_precompile.dir
 
 # All Build rule for target.
