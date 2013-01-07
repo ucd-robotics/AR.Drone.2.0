@@ -161,6 +161,19 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
+# Target rules for targets named cvbook
+
+# Build rule for target.
+cvbook: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cvbook
+.PHONY : cvbook
+
+# fast build rule for target.
+cvbook/fast:
+	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/build
+.PHONY : cvbook/fast
+
+#=============================================================================
 # Target rules for targets named drone_image
 
 # Build rule for target.
@@ -172,6 +185,19 @@ drone_image: cmake_check_build_system
 drone_image/fast:
 	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/build
 .PHONY : drone_image/fast
+
+#=============================================================================
+# Target rules for targets named face_det
+
+# Build rule for target.
+face_det: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 face_det
+.PHONY : face_det
+
+# fast build rule for target.
+face_det/fast:
+	$(MAKE) -f CMakeFiles/face_det.dir/build.make CMakeFiles/face_det.dir/build
+.PHONY : face_det/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -239,6 +265,19 @@ rospack_gensrv/fast:
 .PHONY : rospack_gensrv/fast
 
 #=============================================================================
+# Target rules for targets named single_col_tracking
+
+# Build rule for target.
+single_col_tracking: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_col_tracking
+.PHONY : single_col_tracking
+
+# fast build rule for target.
+single_col_tracking/fast:
+	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/build
+.PHONY : single_col_tracking/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -291,6 +330,19 @@ test-results-run/fast:
 .PHONY : test-results-run/fast
 
 #=============================================================================
+# Target rules for targets named tester
+
+# Build rule for target.
+tester: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tester
+.PHONY : tester
+
+# fast build rule for target.
+tester/fast:
+	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/build
+.PHONY : tester/fast
+
+#=============================================================================
 # Target rules for targets named tests
 
 # Build rule for target.
@@ -302,6 +354,21 @@ tests: cmake_check_build_system
 tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
+
+# target to build an object file
+src/cvbook.o:
+	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/src/cvbook.o
+.PHONY : src/cvbook.o
+
+# target to preprocess a source file
+src/cvbook.i:
+	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/src/cvbook.i
+.PHONY : src/cvbook.i
+
+# target to generate assembly for a file
+src/cvbook.s:
+	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/src/cvbook.s
+.PHONY : src/cvbook.s
 
 # target to build an object file
 src/drone_image.o:
@@ -318,6 +385,51 @@ src/drone_image.s:
 	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/src/drone_image.s
 .PHONY : src/drone_image.s
 
+# target to build an object file
+src/face_det.o:
+	$(MAKE) -f CMakeFiles/face_det.dir/build.make CMakeFiles/face_det.dir/src/face_det.o
+.PHONY : src/face_det.o
+
+# target to preprocess a source file
+src/face_det.i:
+	$(MAKE) -f CMakeFiles/face_det.dir/build.make CMakeFiles/face_det.dir/src/face_det.i
+.PHONY : src/face_det.i
+
+# target to generate assembly for a file
+src/face_det.s:
+	$(MAKE) -f CMakeFiles/face_det.dir/build.make CMakeFiles/face_det.dir/src/face_det.s
+.PHONY : src/face_det.s
+
+# target to build an object file
+src/single_color_tracking.o:
+	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o
+.PHONY : src/single_color_tracking.o
+
+# target to preprocess a source file
+src/single_color_tracking.i:
+	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/src/single_color_tracking.i
+.PHONY : src/single_color_tracking.i
+
+# target to generate assembly for a file
+src/single_color_tracking.s:
+	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/src/single_color_tracking.s
+.PHONY : src/single_color_tracking.s
+
+# target to build an object file
+src/tests.o:
+	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tests.o
+.PHONY : src/tests.o
+
+# target to preprocess a source file
+src/tests.i:
+	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tests.i
+.PHONY : src/tests.i
+
+# target to generate assembly for a file
+src/tests.s:
+	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tests.s
+.PHONY : src/tests.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -329,22 +441,38 @@ help:
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
+	@echo "... cvbook"
 	@echo "... drone_image"
 	@echo "... edit_cache"
+	@echo "... face_det"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
 	@echo "... rospack_genmsg"
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
+	@echo "... single_col_tracking"
 	@echo "... test"
 	@echo "... test-future"
 	@echo "... test-results"
 	@echo "... test-results-run"
+	@echo "... tester"
 	@echo "... tests"
+	@echo "... src/cvbook.o"
+	@echo "... src/cvbook.i"
+	@echo "... src/cvbook.s"
 	@echo "... src/drone_image.o"
 	@echo "... src/drone_image.i"
 	@echo "... src/drone_image.s"
+	@echo "... src/face_det.o"
+	@echo "... src/face_det.i"
+	@echo "... src/face_det.s"
+	@echo "... src/single_color_tracking.o"
+	@echo "... src/single_color_tracking.i"
+	@echo "... src/single_color_tracking.s"
+	@echo "... src/tests.o"
+	@echo "... src/tests.i"
+	@echo "... src/tests.s"
 .PHONY : help
 
 
