@@ -46,72 +46,72 @@ include CMakeFiles/tester.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tester.dir/flags.make
 
-CMakeFiles/tester.dir/src/tests.o: CMakeFiles/tester.dir/flags.make
-CMakeFiles/tester.dir/src/tests.o: ../src/tests.cpp
-CMakeFiles/tester.dir/src/tests.o: ../manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/roslib/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/roslang/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/roscpp/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/message_filters/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/image_common/image_transport/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/vision_opencv/opencv2/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/vision_opencv/cv_bridge/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/rostest/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/roswtf/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/common_rosdeps/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/image_common/camera_calibration_parsers/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/image_common/camera_info_manager/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/rosservice/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/diagnostics/self_test/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/driver_common/driver_base/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/uvc_cam/manifest.xml
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
-CMakeFiles/tester.dir/src/tests.o: /opt/ros/fuerte/stacks/driver_common/driver_base/msg_gen/generated
+CMakeFiles/tester.dir/src/tester.o: CMakeFiles/tester.dir/flags.make
+CMakeFiles/tester.dir/src/tester.o: ../src/tester.cpp
+CMakeFiles/tester.dir/src/tester.o: ../manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/roslib/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/roslang/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/roscpp/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/message_filters/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/image_common/image_transport/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/vision_opencv/opencv2/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/vision_opencv/cv_bridge/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/rospy/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/rostest/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/roswtf/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/common_rosdeps/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/image_common/camera_calibration_parsers/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/image_common/camera_info_manager/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/rosservice/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/diagnostics/self_test/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/driver_common/driver_base/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/uvc_cam/manifest.xml
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
+CMakeFiles/tester.dir/src/tester.o: /opt/ros/fuerte/stacks/driver_common/driver_base/msg_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/tester.dir/src/tests.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/tester.dir/src/tests.o -c /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/tester.dir/src/tester.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/tester.dir/src/tester.o -c /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tester.cpp
 
-CMakeFiles/tester.dir/src/tests.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tester.dir/src/tests.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tests.cpp > CMakeFiles/tester.dir/src/tests.i
+CMakeFiles/tester.dir/src/tester.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tester.dir/src/tester.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tester.cpp > CMakeFiles/tester.dir/src/tester.i
 
-CMakeFiles/tester.dir/src/tests.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tester.dir/src/tests.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tests.cpp -o CMakeFiles/tester.dir/src/tests.s
+CMakeFiles/tester.dir/src/tester.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tester.dir/src/tester.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tester.cpp -o CMakeFiles/tester.dir/src/tester.s
 
-CMakeFiles/tester.dir/src/tests.o.requires:
-.PHONY : CMakeFiles/tester.dir/src/tests.o.requires
+CMakeFiles/tester.dir/src/tester.o.requires:
+.PHONY : CMakeFiles/tester.dir/src/tester.o.requires
 
-CMakeFiles/tester.dir/src/tests.o.provides: CMakeFiles/tester.dir/src/tests.o.requires
-	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tests.o.provides.build
-.PHONY : CMakeFiles/tester.dir/src/tests.o.provides
+CMakeFiles/tester.dir/src/tester.o.provides: CMakeFiles/tester.dir/src/tester.o.requires
+	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tester.o.provides.build
+.PHONY : CMakeFiles/tester.dir/src/tester.o.provides
 
-CMakeFiles/tester.dir/src/tests.o.provides.build: CMakeFiles/tester.dir/src/tests.o
+CMakeFiles/tester.dir/src/tester.o.provides.build: CMakeFiles/tester.dir/src/tester.o
 
 # Object files for target tester
 tester_OBJECTS = \
-"CMakeFiles/tester.dir/src/tests.o"
+"CMakeFiles/tester.dir/src/tester.o"
 
 # External object files for target tester
 tester_EXTERNAL_OBJECTS =
 
-../bin/tester: CMakeFiles/tester.dir/src/tests.o
+../bin/tester: CMakeFiles/tester.dir/src/tester.o
 ../bin/tester: CMakeFiles/tester.dir/build.make
 ../bin/tester: CMakeFiles/tester.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/tester"
@@ -121,7 +121,7 @@ tester_EXTERNAL_OBJECTS =
 CMakeFiles/tester.dir/build: ../bin/tester
 .PHONY : CMakeFiles/tester.dir/build
 
-CMakeFiles/tester.dir/requires: CMakeFiles/tester.dir/src/tests.o.requires
+CMakeFiles/tester.dir/requires: CMakeFiles/tester.dir/src/tester.o.requires
 .PHONY : CMakeFiles/tester.dir/requires
 
 CMakeFiles/tester.dir/clean:

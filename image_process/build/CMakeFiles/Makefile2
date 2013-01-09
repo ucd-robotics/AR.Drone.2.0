@@ -174,6 +174,76 @@ clean: CMakeFiles/ROSBUILD_gensrv_lisp.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/blobtrack.dir
+
+# All Build rule for target.
+CMakeFiles/blobtrack.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/blobtrack.dir/build.make CMakeFiles/blobtrack.dir/depend
+	$(MAKE) -f CMakeFiles/blobtrack.dir/build.make CMakeFiles/blobtrack.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  1
+	@echo "Built target blobtrack"
+.PHONY : CMakeFiles/blobtrack.dir/all
+
+# Include target in all.
+all: CMakeFiles/blobtrack.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/blobtrack.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/blobtrack.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
+.PHONY : CMakeFiles/blobtrack.dir/rule
+
+# Convenience name for target.
+blobtrack: CMakeFiles/blobtrack.dir/rule
+.PHONY : blobtrack
+
+# clean rule for target.
+CMakeFiles/blobtrack.dir/clean:
+	$(MAKE) -f CMakeFiles/blobtrack.dir/build.make CMakeFiles/blobtrack.dir/clean
+.PHONY : CMakeFiles/blobtrack.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/blobtrack.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/camshift.dir
+
+# All Build rule for target.
+CMakeFiles/camshift.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/depend
+	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  2
+	@echo "Built target camshift"
+.PHONY : CMakeFiles/camshift.dir/all
+
+# Include target in all.
+all: CMakeFiles/camshift.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/camshift.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/camshift.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
+.PHONY : CMakeFiles/camshift.dir/rule
+
+# Convenience name for target.
+camshift: CMakeFiles/camshift.dir/rule
+.PHONY : camshift
+
+# clean rule for target.
+CMakeFiles/camshift.dir/clean:
+	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/clean
+.PHONY : CMakeFiles/camshift.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/camshift.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/clean-test-results.dir
 
 # All Build rule for target.
@@ -205,73 +275,73 @@ clean: CMakeFiles/clean-test-results.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cvbook.dir
+# Target rules for target CMakeFiles/drone_colour_track.dir
 
 # All Build rule for target.
-CMakeFiles/cvbook.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/depend
-	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  1
-	@echo "Built target cvbook"
-.PHONY : CMakeFiles/cvbook.dir/all
+CMakeFiles/drone_colour_track.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/depend
+	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  3
+	@echo "Built target drone_colour_track"
+.PHONY : CMakeFiles/drone_colour_track.dir/all
 
 # Include target in all.
-all: CMakeFiles/cvbook.dir/all
+all: CMakeFiles/drone_colour_track.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cvbook.dir/rule: cmake_check_build_system
+CMakeFiles/drone_colour_track.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cvbook.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/drone_colour_track.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
-.PHONY : CMakeFiles/cvbook.dir/rule
+.PHONY : CMakeFiles/drone_colour_track.dir/rule
 
 # Convenience name for target.
-cvbook: CMakeFiles/cvbook.dir/rule
-.PHONY : cvbook
+drone_colour_track: CMakeFiles/drone_colour_track.dir/rule
+.PHONY : drone_colour_track
 
 # clean rule for target.
-CMakeFiles/cvbook.dir/clean:
-	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/clean
-.PHONY : CMakeFiles/cvbook.dir/clean
+CMakeFiles/drone_colour_track.dir/clean:
+	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/clean
+.PHONY : CMakeFiles/drone_colour_track.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/cvbook.dir/clean
+clean: CMakeFiles/drone_colour_track.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/drone_image.dir
+# Target rules for target CMakeFiles/drone_facetrack.dir
 
 # All Build rule for target.
-CMakeFiles/drone_image.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/depend
-	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  2
-	@echo "Built target drone_image"
-.PHONY : CMakeFiles/drone_image.dir/all
+CMakeFiles/drone_facetrack.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/depend
+	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  4
+	@echo "Built target drone_facetrack"
+.PHONY : CMakeFiles/drone_facetrack.dir/all
 
 # Include target in all.
-all: CMakeFiles/drone_image.dir/all
+all: CMakeFiles/drone_facetrack.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/drone_image.dir/rule: cmake_check_build_system
+CMakeFiles/drone_facetrack.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/drone_image.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/drone_facetrack.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
-.PHONY : CMakeFiles/drone_image.dir/rule
+.PHONY : CMakeFiles/drone_facetrack.dir/rule
 
 # Convenience name for target.
-drone_image: CMakeFiles/drone_image.dir/rule
-.PHONY : drone_image
+drone_facetrack: CMakeFiles/drone_facetrack.dir/rule
+.PHONY : drone_facetrack
 
 # clean rule for target.
-CMakeFiles/drone_image.dir/clean:
-	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/clean
-.PHONY : CMakeFiles/drone_image.dir/clean
+CMakeFiles/drone_facetrack.dir/clean:
+	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/clean
+.PHONY : CMakeFiles/drone_facetrack.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/drone_image.dir/clean
+clean: CMakeFiles/drone_facetrack.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -281,7 +351,7 @@ clean: CMakeFiles/drone_image.dir/clean
 CMakeFiles/face_det.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/face_det.dir/build.make CMakeFiles/face_det.dir/depend
 	$(MAKE) -f CMakeFiles/face_det.dir/build.make CMakeFiles/face_det.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  5
 	@echo "Built target face_det"
 .PHONY : CMakeFiles/face_det.dir/all
 
@@ -467,13 +537,48 @@ clean: CMakeFiles/rospack_gensrv.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/simpleCanny.dir
+
+# All Build rule for target.
+CMakeFiles/simpleCanny.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/depend
+	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  6
+	@echo "Built target simpleCanny"
+.PHONY : CMakeFiles/simpleCanny.dir/all
+
+# Include target in all.
+all: CMakeFiles/simpleCanny.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/simpleCanny.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simpleCanny.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
+.PHONY : CMakeFiles/simpleCanny.dir/rule
+
+# Convenience name for target.
+simpleCanny: CMakeFiles/simpleCanny.dir/rule
+.PHONY : simpleCanny
+
+# clean rule for target.
+CMakeFiles/simpleCanny.dir/clean:
+	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/clean
+.PHONY : CMakeFiles/simpleCanny.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/simpleCanny.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/single_col_tracking.dir
 
 # All Build rule for target.
 CMakeFiles/single_col_tracking.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/depend
 	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  7
 	@echo "Built target single_col_tracking"
 .PHONY : CMakeFiles/single_col_tracking.dir/all
 
@@ -632,7 +737,7 @@ clean: CMakeFiles/test-results-run.dir/clean
 CMakeFiles/tester.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/depend
 	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  8
 	@echo "Built target tester"
 .PHONY : CMakeFiles/tester.dir/all
 

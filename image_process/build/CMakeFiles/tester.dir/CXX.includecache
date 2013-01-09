@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tests.cpp
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tester.cpp
 ros/ros.h
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/ros/ros.h
 std_msgs/String.h

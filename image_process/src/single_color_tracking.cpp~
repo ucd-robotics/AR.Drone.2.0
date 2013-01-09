@@ -1,3 +1,6 @@
+#ifdef _CH_
+#pragma package <opencv>
+#endif
 
 #include "ros/ros.h"
 #include "std_msgs/String.h"
@@ -6,69 +9,110 @@
 #include <stdio.h>
 #include <ctype.h>
 
-const int MAX_CORNERS = 500;
+//Source: http://www.aishack.in/2010/07/tracking-colored-objects-in-opencv/
 
-int main(int argc, char* argv[])
-{
-	// Load two images and allocate other structures
-	IplImage* imgA = cvLoadImage("image0.png", CV_LOAD_IMAGE_GRAYSCALE);
-	IplImage* imgB = cvLoadImage("image1.png", CV_LOAD_IMAGE_GRAYSCALE);
+IplImage* GetThresholdedImage(IplImage* img) {
+	// Convert the image into an HSV image
+	IplImage* imgHSV = cvCreateImage(cvGetSize(img), 8, 3);
+	cvCvtColor(img, imgHSV, CV_BGR2HSV);
 
-	CvSize img_sz = cvGetSize( imgA );
-	int win_size = 15;
+	IplImage* imgThreshed = cvCreateImage(cvGetSize(img), 8, 1);
+	//Yellow
+	cvInRangeS(imgHSV, cvScalar(20, 100, 100), cvScalar(30, 255, 255),imgThreshed);
 
-	IplImage* imgC = cvLoadImage("OpticalFlow1.png", CV_LOAD_IMAGE_UNCHANGED);
+	//Red
+	//cvInRangeS(imgHSV, cvScalar(0, 240, 120), cvScalar(40, 240, 120),imgThreshed);
 
-	// Get the features for tracking
-	IplImage* eig_image = cvCreateImage( img_sz, IPL_DEPTH_32F, 1 );
-	IplImage* tmp_image = cvCreateImage( img_sz, IPL_DEPTH_32F, 1 );
 
-	int corner_count = MAX_CORNERS;
-	CvPoint2D32f* cornersA = new CvPoint2D32f[ MAX_CORNERS ];
+	cvReleaseImage(&imgHSV);
+	return imgThreshed;
+}
 
-	cvGoodFeaturesToTrack( imgA, eig_image, tmp_image, cornersA, &corner_count,
-		0.05, 5.0, 0, 3, 0, 0.04 );
+int main(int argc, char** argv) {
 
-	cvFindCornerSubPix( imgA, cornersA, corner_count, cvSize( win_size, win_size ),
-		cvSize( -1, -1 ), cvTermCriteria( CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 20, 0.03 ) );
+	// Initialize capturing live feed from the camera
+	CvCapture* capture = 0;
+	capture = cvCaptureFromCAM(0);
 
-	// Call Lucas Kanade algorithm
-	char features_found[ MAX_CORNERS ];
-	float feature_errors[ MAX_CORNERS ];
-
-	CvSize pyr_sz = cvSize( imgA->width+8, imgB->height/3 );
-
-	IplImage* pyrA = cvCreateImage( pyr_sz, IPL_DEPTH_32F, 1 );
-	IplImage* pyrB = cvCreateImage( pyr_sz, IPL_DEPTH_32F, 1 );
-
-	CvPoint2D32f* cornersB = new CvPoint2D32f[ MAX_CORNERS ];
-
-	cvCalcOpticalFlowPyrLK( imgA, imgB, pyrA, pyrB, cornersA, cornersB, corner_count, 
-		cvSize( win_size, win_size ), 5, features_found, feature_errors,
-		 cvTermCriteria( CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 20, 0.3 ), 0 );
-
-	// Make an image of the results
-	
-	int i;
-	for( i=0; i<550; i++ ){
-			printf("Error is %f/n", feature_errors[i]);
-			continue;
-		
-		printf("Got it/n");
-		CvPoint p0 = cvPoint( cvRound( cornersA[i].x ), cvRound( cornersA[i].y ) );
-		CvPoint p1 = cvPoint( cvRound( cornersB[i].x ), cvRound( cornersB[i].y ) );
-		cvLine( imgC, p0, p1, CV_RGB(255,0,0), 2 );
+	// Couldn't get a device? Throw an error and quit
+	if (!capture) {
+		printf("Could not initialize capturing...\n");
+		return -1;
 	}
 
-	cvNamedWindow("ImageA");
-	cvNamedWindow("ImageB");
-	cvNamedWindow("LKpyr_OpticalFlow");
+	// The two windows we'll be using
+	cvNamedWindow("video");
+	cvNamedWindow("thresh");
 
-	cvShowImage("ImageA", imgA );
-	cvShowImage("ImageB", imgB );
-	cvShowImage("LKpyr_OpticalFlow", imgC );
+	// This image holds the "scribble" data...
+	// the tracked positions of the ball
+	IplImage* imgScribble = NULL;
 
-	cvWaitKey(0);
+	// An infinite loop
+	while (true) {
+		// Will hold a frame captured from the camera
+		IplImage* frame = 0;
+		frame = cvQueryFrame(capture);
+		// If we couldn't grab a frame... quit
+		if (!frame)
+			break;
+
+		// If this is the first frame, we need to initialize it
+		if (imgScribble == NULL) {
+			imgScribble = cvCreateImage(cvGetSize(frame), 8, 3);
+		}
+
+		// Holds the yellow thresholded image (yellow = white, rest = black)
+		IplImage* imgYellowThresh = GetThresholdedImage(frame);
+
+		// Calculate the moments to estimate the position of the ball
+		CvMoments *moments = (CvMoments*) malloc(sizeof(CvMoments));
+		cvMoments(imgYellowThresh, moments, 1);
+
+		// The actual moment values
+		double moment10 = cvGetSpatialMoment(moments, 1, 0);
+		double moment01 = cvGetSpatialMoment(moments, 0, 1);
+		double area = cvGetCentralMoment(moments, 0, 0);
+
+		// Holding the last and current ball positions
+		static int posX = 0;
+		static int posY = 0;
+
+		int lastX = posX;
+		int lastY = posY;
+
+		posX = moment10 / area;
+		posY = moment01 / area;
+
+		// Print it out for debugging purposes
+		printf("position (%d,%d)\n", posX, posY);
+		Mat atom_image = Mat::zeros( w, w, CV_8UC3 );
+		// We want to draw a line only if its a valid position
+		if (lastX > 0 && lastY > 0 && posX > 0 && posY > 0) {
+//			// Draw a yellow line from the previous point to the current point
+//			cvLine(imgScribble, cvPoint(posX, posY), cvPoint(lastX, lastY),
+//					cvScalar(0, 255, 255), 5);
+		MyFilledCircle( atom_image, cvPoint(posX, posY));
+		}
+
+		// Add the scribbling image and the frame...
+		cvAdd(frame, imgScribble, frame);
+		cvShowImage("thresh", imgYellowThresh);
+		cvShowImage("video", frame);
+
+		// Wait for a keypress
+		int c = cvWaitKey(10);
+		if (c != -1) {
+			// If pressed, break out of the loop
+			break;
+		}
+		// Release the thresholded image+moments... we need no memory leaks.. please
+		cvReleaseImage(&imgYellowThresh);
+		delete moments;
+	}
+
+	// We're done using the camera. Other applications can now use it
+	cvReleaseCapture(&capture);
 
 	return 0;
 }

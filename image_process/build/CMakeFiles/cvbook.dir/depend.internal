@@ -6,6 +6,7 @@ CMakeFiles/cvbook.dir/src/cvbook.o
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
  /opt/ros/fuerte/include/opencv/cv.h
+ /opt/ros/fuerte/include/opencv/highgui.h
  /opt/ros/fuerte/include/opencv2/calib3d/calib3d.hpp
  /opt/ros/fuerte/include/opencv2/core/core.hpp
  /opt/ros/fuerte/include/opencv2/core/core_c.h

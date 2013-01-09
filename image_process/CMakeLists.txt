@@ -29,12 +29,15 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-rosbuild_add_executable(drone_image src/drone_image.cpp)
-rosbuild_add_executable(single_col_tracking src/single_color_tracking.cpp)
-rosbuild_add_executable(face_det src/face_det.cpp)
-rosbuild_add_executable(tester src/tests.cpp)
-rosbuild_add_executable(cvbook src/cvbook.cpp)
-#rosbuild_add_executable(track src/track.cpp)
+rosbuild_add_executable(drone_colour_track src/drone_colour_track.cpp) #WORKING! tracks yellow object from drone!
+rosbuild_add_executable(drone_facetrack src/drone_facetrack.cpp) #right now only gets drone cam, must work and fix to track face!!
+rosbuild_add_executable(single_col_tracking src/single_color_tracking.cpp) #tracks yellow and prints yellow line, (comp cam)
+rosbuild_add_executable(face_det src/face_det.cpp) #tracks face and prints circle on face an eyes (comp cam)
+rosbuild_add_executable(blobtrack src/blobtrack.cpp) #needs arguments when running
+rosbuild_add_executable(camshift src/camshift.cpp) #mouse click and drag to track object, (comp cam)
+rosbuild_add_executable(simpleCanny src/simpleCanny.cpp) #gets drone cam and converts image to get canny and prints both feeds
+rosbuild_add_executable(tester src/tester.cpp) # doesnt work, optical flow test
+#rosbuild_add_executable(blobresult src/blobresult.cpp)
 #rosbuild_add_executable(tracking src/colour_tracking.cpp)
 
 

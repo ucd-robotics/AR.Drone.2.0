@@ -148,6 +148,32 @@ ROSBUILD_gensrv_lisp/fast:
 .PHONY : ROSBUILD_gensrv_lisp/fast
 
 #=============================================================================
+# Target rules for targets named blobtrack
+
+# Build rule for target.
+blobtrack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 blobtrack
+.PHONY : blobtrack
+
+# fast build rule for target.
+blobtrack/fast:
+	$(MAKE) -f CMakeFiles/blobtrack.dir/build.make CMakeFiles/blobtrack.dir/build
+.PHONY : blobtrack/fast
+
+#=============================================================================
+# Target rules for targets named camshift
+
+# Build rule for target.
+camshift: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 camshift
+.PHONY : camshift
+
+# fast build rule for target.
+camshift/fast:
+	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/build
+.PHONY : camshift/fast
+
+#=============================================================================
 # Target rules for targets named clean-test-results
 
 # Build rule for target.
@@ -161,30 +187,30 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
-# Target rules for targets named cvbook
+# Target rules for targets named drone_colour_track
 
 # Build rule for target.
-cvbook: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cvbook
-.PHONY : cvbook
+drone_colour_track: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 drone_colour_track
+.PHONY : drone_colour_track
 
 # fast build rule for target.
-cvbook/fast:
-	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/build
-.PHONY : cvbook/fast
+drone_colour_track/fast:
+	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/build
+.PHONY : drone_colour_track/fast
 
 #=============================================================================
-# Target rules for targets named drone_image
+# Target rules for targets named drone_facetrack
 
 # Build rule for target.
-drone_image: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 drone_image
-.PHONY : drone_image
+drone_facetrack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 drone_facetrack
+.PHONY : drone_facetrack
 
 # fast build rule for target.
-drone_image/fast:
-	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/build
-.PHONY : drone_image/fast
+drone_facetrack/fast:
+	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/build
+.PHONY : drone_facetrack/fast
 
 #=============================================================================
 # Target rules for targets named face_det
@@ -263,6 +289,19 @@ rospack_gensrv: cmake_check_build_system
 rospack_gensrv/fast:
 	$(MAKE) -f CMakeFiles/rospack_gensrv.dir/build.make CMakeFiles/rospack_gensrv.dir/build
 .PHONY : rospack_gensrv/fast
+
+#=============================================================================
+# Target rules for targets named simpleCanny
+
+# Build rule for target.
+simpleCanny: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simpleCanny
+.PHONY : simpleCanny
+
+# fast build rule for target.
+simpleCanny/fast:
+	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/build
+.PHONY : simpleCanny/fast
 
 #=============================================================================
 # Target rules for targets named single_col_tracking
@@ -356,34 +395,64 @@ tests/fast:
 .PHONY : tests/fast
 
 # target to build an object file
-src/cvbook.o:
-	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/src/cvbook.o
-.PHONY : src/cvbook.o
+src/blobtrack.o:
+	$(MAKE) -f CMakeFiles/blobtrack.dir/build.make CMakeFiles/blobtrack.dir/src/blobtrack.o
+.PHONY : src/blobtrack.o
 
 # target to preprocess a source file
-src/cvbook.i:
-	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/src/cvbook.i
-.PHONY : src/cvbook.i
+src/blobtrack.i:
+	$(MAKE) -f CMakeFiles/blobtrack.dir/build.make CMakeFiles/blobtrack.dir/src/blobtrack.i
+.PHONY : src/blobtrack.i
 
 # target to generate assembly for a file
-src/cvbook.s:
-	$(MAKE) -f CMakeFiles/cvbook.dir/build.make CMakeFiles/cvbook.dir/src/cvbook.s
-.PHONY : src/cvbook.s
+src/blobtrack.s:
+	$(MAKE) -f CMakeFiles/blobtrack.dir/build.make CMakeFiles/blobtrack.dir/src/blobtrack.s
+.PHONY : src/blobtrack.s
 
 # target to build an object file
-src/drone_image.o:
-	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/src/drone_image.o
-.PHONY : src/drone_image.o
+src/camshift.o:
+	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/src/camshift.o
+.PHONY : src/camshift.o
 
 # target to preprocess a source file
-src/drone_image.i:
-	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/src/drone_image.i
-.PHONY : src/drone_image.i
+src/camshift.i:
+	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/src/camshift.i
+.PHONY : src/camshift.i
 
 # target to generate assembly for a file
-src/drone_image.s:
-	$(MAKE) -f CMakeFiles/drone_image.dir/build.make CMakeFiles/drone_image.dir/src/drone_image.s
-.PHONY : src/drone_image.s
+src/camshift.s:
+	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/src/camshift.s
+.PHONY : src/camshift.s
+
+# target to build an object file
+src/drone_colour_track.o:
+	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/src/drone_colour_track.o
+.PHONY : src/drone_colour_track.o
+
+# target to preprocess a source file
+src/drone_colour_track.i:
+	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/src/drone_colour_track.i
+.PHONY : src/drone_colour_track.i
+
+# target to generate assembly for a file
+src/drone_colour_track.s:
+	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/src/drone_colour_track.s
+.PHONY : src/drone_colour_track.s
+
+# target to build an object file
+src/drone_facetrack.o:
+	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/src/drone_facetrack.o
+.PHONY : src/drone_facetrack.o
+
+# target to preprocess a source file
+src/drone_facetrack.i:
+	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/src/drone_facetrack.i
+.PHONY : src/drone_facetrack.i
+
+# target to generate assembly for a file
+src/drone_facetrack.s:
+	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/src/drone_facetrack.s
+.PHONY : src/drone_facetrack.s
 
 # target to build an object file
 src/face_det.o:
@@ -401,6 +470,21 @@ src/face_det.s:
 .PHONY : src/face_det.s
 
 # target to build an object file
+src/simpleCanny.o:
+	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/src/simpleCanny.o
+.PHONY : src/simpleCanny.o
+
+# target to preprocess a source file
+src/simpleCanny.i:
+	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/src/simpleCanny.i
+.PHONY : src/simpleCanny.i
+
+# target to generate assembly for a file
+src/simpleCanny.s:
+	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/src/simpleCanny.s
+.PHONY : src/simpleCanny.s
+
+# target to build an object file
 src/single_color_tracking.o:
 	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o
 .PHONY : src/single_color_tracking.o
@@ -416,19 +500,19 @@ src/single_color_tracking.s:
 .PHONY : src/single_color_tracking.s
 
 # target to build an object file
-src/tests.o:
-	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tests.o
-.PHONY : src/tests.o
+src/tester.o:
+	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tester.o
+.PHONY : src/tester.o
 
 # target to preprocess a source file
-src/tests.i:
-	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tests.i
-.PHONY : src/tests.i
+src/tester.i:
+	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tester.i
+.PHONY : src/tester.i
 
 # target to generate assembly for a file
-src/tests.s:
-	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tests.s
-.PHONY : src/tests.s
+src/tester.s:
+	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tester.s
+.PHONY : src/tester.s
 
 # Help Target
 help:
@@ -440,9 +524,11 @@ help:
 	@echo "... ROSBUILD_genmsg_lisp"
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
+	@echo "... blobtrack"
+	@echo "... camshift"
 	@echo "... clean-test-results"
-	@echo "... cvbook"
-	@echo "... drone_image"
+	@echo "... drone_colour_track"
+	@echo "... drone_facetrack"
 	@echo "... edit_cache"
 	@echo "... face_det"
 	@echo "... rebuild_cache"
@@ -451,6 +537,7 @@ help:
 	@echo "... rospack_genmsg"
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
+	@echo "... simpleCanny"
 	@echo "... single_col_tracking"
 	@echo "... test"
 	@echo "... test-future"
@@ -458,21 +545,30 @@ help:
 	@echo "... test-results-run"
 	@echo "... tester"
 	@echo "... tests"
-	@echo "... src/cvbook.o"
-	@echo "... src/cvbook.i"
-	@echo "... src/cvbook.s"
-	@echo "... src/drone_image.o"
-	@echo "... src/drone_image.i"
-	@echo "... src/drone_image.s"
+	@echo "... src/blobtrack.o"
+	@echo "... src/blobtrack.i"
+	@echo "... src/blobtrack.s"
+	@echo "... src/camshift.o"
+	@echo "... src/camshift.i"
+	@echo "... src/camshift.s"
+	@echo "... src/drone_colour_track.o"
+	@echo "... src/drone_colour_track.i"
+	@echo "... src/drone_colour_track.s"
+	@echo "... src/drone_facetrack.o"
+	@echo "... src/drone_facetrack.i"
+	@echo "... src/drone_facetrack.s"
 	@echo "... src/face_det.o"
 	@echo "... src/face_det.i"
 	@echo "... src/face_det.s"
+	@echo "... src/simpleCanny.o"
+	@echo "... src/simpleCanny.i"
+	@echo "... src/simpleCanny.s"
 	@echo "... src/single_color_tracking.o"
 	@echo "... src/single_color_tracking.i"
 	@echo "... src/single_color_tracking.s"
-	@echo "... src/tests.o"
-	@echo "... src/tests.i"
-	@echo "... src/tests.s"
+	@echo "... src/tester.o"
+	@echo "... src/tester.i"
+	@echo "... src/tester.s"
 .PHONY : help
 
 

@@ -10,12 +10,12 @@
 ros/ros.h
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/ros/ros.h
 cv.h
-/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/cv.h
-opencv2/core/core.hpp
 -
-opencv2/imgproc/imgproc.hpp
+highgui.h
 -
-opencv2/highgui/highgui.hpp
+iostream
+-
+cstdio
 -
 
 /opt/ros/fuerte/include/XmlRpcDecl.h
@@ -57,6 +57,16 @@ opencv2/legacy/compat.hpp
 /opt/ros/fuerte/include/opencv/opencv2/legacy/compat.hpp
 opencv2/core/internal.hpp
 /opt/ros/fuerte/include/opencv/opencv2/core/internal.hpp
+
+/opt/ros/fuerte/include/opencv/highgui.h
+opencv2/core/core_c.h
+/opt/ros/fuerte/include/opencv/opencv2/core/core_c.h
+opencv2/core/core.hpp
+/opt/ros/fuerte/include/opencv/opencv2/core/core.hpp
+opencv2/highgui/highgui_c.h
+/opt/ros/fuerte/include/opencv/opencv2/highgui/highgui_c.h
+opencv2/highgui/highgui.hpp
+/opt/ros/fuerte/include/opencv/opencv2/highgui/highgui.hpp
 
 /opt/ros/fuerte/include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp
