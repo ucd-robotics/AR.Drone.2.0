@@ -31,7 +31,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 rosbuild_add_executable(drone_colour_track src/drone_colour_track.cpp) #WORKING! tracks yellow object from drone!
 rosbuild_add_executable(drone_facetrack src/drone_facetrack.cpp) #right now only gets drone cam, must work and fix to track face!!
-rosbuild_add_executable(single_col_tracking src/single_color_tracking.cpp) #tracks yellow and prints yellow line, (comp cam)
+rosbuild_add_executable(single_col_tracking src/single_color_tracking.cpp) #tracks blue and prints line, (comp cam)
 rosbuild_add_executable(face_det src/face_det.cpp) #tracks face and prints circle on face an eyes (comp cam)
 rosbuild_add_executable(blobtrack src/blobtrack.cpp) #needs arguments when running
 rosbuild_add_executable(camshift src/camshift.cpp) #mouse click and drag to track object, (comp cam)

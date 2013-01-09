@@ -18,11 +18,13 @@ IplImage* GetThresholdedImage(IplImage* img) {
 
 	IplImage* imgThreshed = cvCreateImage(cvGetSize(img), 8, 1);
 	//Yellow
-	cvInRangeS(imgHSV, cvScalar(20, 100, 100), cvScalar(30, 255, 255),imgThreshed);
+	//cvInRangeS(imgHSV, cvScalar(20, 100, 100), cvScalar(30, 255, 255),imgThreshed);
+
+	//blue
+	cvInRangeS(imgHSV, cvScalar(100, 135, 135), cvScalar(140, 255, 255), imgThreshed);
 
 	//Red
-	//cvInRangeS(imgHSV, cvScalar(0, 240, 120), cvScalar(40, 240, 120),imgThreshed);
-
+	//cant find good color range to track
 
 	cvReleaseImage(&imgHSV);
 	return imgThreshed;
@@ -91,7 +93,7 @@ int main(int argc, char** argv) {
 		if (lastX > 0 && lastY > 0 && posX > 0 && posY > 0) {
 			// Draw a yellow line from the previous point to the current point
 			cvLine(imgScribble, cvPoint(posX, posY), cvPoint(lastX, lastY),
-					cvScalar(0, 255, 255), 5);
+					cvScalar(100, 170, 170), 5);
 		}
 
 		// Add the scribbling image and the frame...
