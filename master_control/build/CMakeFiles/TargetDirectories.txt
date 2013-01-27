@@ -8,6 +8,7 @@
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles/rospack_genmsg.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles/rospack_genmsg_libexe.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles/rospack_gensrv.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles/single_col_tracking_reader.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles/test.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles/test-future.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles/test-results.dir

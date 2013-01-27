@@ -226,6 +226,19 @@ rospack_gensrv/fast:
 .PHONY : rospack_gensrv/fast
 
 #=============================================================================
+# Target rules for targets named single_col_tracking_reader
+
+# Build rule for target.
+single_col_tracking_reader: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_col_tracking_reader
+.PHONY : single_col_tracking_reader
+
+# fast build rule for target.
+single_col_tracking_reader/fast:
+	$(MAKE) -f CMakeFiles/single_col_tracking_reader.dir/build.make CMakeFiles/single_col_tracking_reader.dir/build
+.PHONY : single_col_tracking_reader/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -290,6 +303,21 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+# target to build an object file
+src/single_color_tracking_reader.o:
+	$(MAKE) -f CMakeFiles/single_col_tracking_reader.dir/build.make CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o
+.PHONY : src/single_color_tracking_reader.o
+
+# target to preprocess a source file
+src/single_color_tracking_reader.i:
+	$(MAKE) -f CMakeFiles/single_col_tracking_reader.dir/build.make CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.i
+.PHONY : src/single_color_tracking_reader.i
+
+# target to generate assembly for a file
+src/single_color_tracking_reader.s:
+	$(MAKE) -f CMakeFiles/single_col_tracking_reader.dir/build.make CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.s
+.PHONY : src/single_color_tracking_reader.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -308,11 +336,15 @@ help:
 	@echo "... rospack_genmsg"
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
+	@echo "... single_col_tracking_reader"
 	@echo "... test"
 	@echo "... test-future"
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
+	@echo "... src/single_color_tracking_reader.o"
+	@echo "... src/single_color_tracking_reader.i"
+	@echo "... src/single_color_tracking_reader.s"
 .PHONY : help
 
 

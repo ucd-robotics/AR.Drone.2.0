@@ -362,6 +362,41 @@ clean: CMakeFiles/rospack_gensrv.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/single_col_tracking_reader.dir
+
+# All Build rule for target.
+CMakeFiles/single_col_tracking_reader.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/single_col_tracking_reader.dir/build.make CMakeFiles/single_col_tracking_reader.dir/depend
+	$(MAKE) -f CMakeFiles/single_col_tracking_reader.dir/build.make CMakeFiles/single_col_tracking_reader.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles  1
+	@echo "Built target single_col_tracking_reader"
+.PHONY : CMakeFiles/single_col_tracking_reader.dir/all
+
+# Include target in all.
+all: CMakeFiles/single_col_tracking_reader.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/single_col_tracking_reader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/single_col_tracking_reader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles 0
+.PHONY : CMakeFiles/single_col_tracking_reader.dir/rule
+
+# Convenience name for target.
+single_col_tracking_reader: CMakeFiles/single_col_tracking_reader.dir/rule
+.PHONY : single_col_tracking_reader
+
+# clean rule for target.
+CMakeFiles/single_col_tracking_reader.dir/clean:
+	$(MAKE) -f CMakeFiles/single_col_tracking_reader.dir/build.make CMakeFiles/single_col_tracking_reader.dir/clean
+.PHONY : CMakeFiles/single_col_tracking_reader.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/single_col_tracking_reader.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.

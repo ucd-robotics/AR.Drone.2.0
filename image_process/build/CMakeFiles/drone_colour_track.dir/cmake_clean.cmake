@@ -1,4 +1,7 @@
 FILE(REMOVE_RECURSE
+  "../msg_gen"
+  "../src/image_process/msg"
+  "../msg_gen"
   "CMakeFiles/drone_colour_track.dir/src/drone_colour_track.o"
   "../bin/drone_colour_track.pdb"
   "../bin/drone_colour_track"

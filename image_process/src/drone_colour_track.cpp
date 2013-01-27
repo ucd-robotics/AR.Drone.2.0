@@ -38,6 +38,7 @@ class drone_image
   image_transport::Subscriber image_sub_; //image subscriber 
   image_transport::Publisher image_pub_; //image publisher(we subscribe to ardrone image_raw)
   std_msgs::String msg;
+
 public:
  drone_image()
     : it_(nh_)
@@ -64,10 +65,10 @@ public:
 //IplImage* workingImage = colour_detect_RGB(img, min_thresh, max_thresh); //works but pics up a lot
 //IplImage* workingImage = GetThresholdedImage(img); // shows yellow from cam 
 
-
+        ros::Publisher chatter_pub = n.advertise<std_msgs::String>("test", 1000);
 	IplImage* result = cvCreateImage( cvGetSize(img), 8, 3 );
 	// The two windows we'll be using
-	cvNamedWindow("video");
+	//cvNamedWindow("video");
 	cvNamedWindow("thresh");
 
 	// This image holds the "scribble" data...
@@ -115,14 +116,27 @@ public:
 	cvAdd(img, imgScribble, result, NULL);
 	cvShowImage("thresh", imgYellowThresh);
 	cvShowImage("result", result);
-        cvShowImage( "ARDRONE FEED",img);
+       // cvShowImage( "ARDRONE FEED",img);
 
 	// Wait for a keypress
 	int c = cvWaitKey(10);
-	if (c != -1) {
+	if (c == 27 ) {
 		// If pressed, break out of the loop
 		exit(0);
 	}
+while (ros::ok())
+ 	{
+	std_msgs::String msg1;
+	
+	std::stringstream ss;
+	ss << posX << " " << posY;
+	msg1.data = ss.str();
+	chatter_pub.publish(msg1);
+	ROS_INFO("%s", msg1.data.c_str());
+
+	ros::spinOnce();
+}
+
 }
 
 IplImage* colour_detect_RGB(IplImage* img,int min_thresh, int max_thresh)
@@ -155,10 +169,10 @@ IplImage* GetThresholdedImage(IplImage* img) {
 	IplImage* imgThreshed = cvCreateImage(cvGetSize(img), 8, 1);
 
 	//Yellow
-	//cvInRangeS(imgHSV, cvScalar(20, 100, 100), cvScalar(30, 255, 255),imgThreshed);
+	cvInRangeS(imgHSV, cvScalar(20, 100, 100), cvScalar(30, 255, 255),imgThreshed);
 
 	//blue
-	cvInRangeS(imgHSV, cvScalar(100, 135, 135), cvScalar(140, 255, 255), imgThreshed);
+	//cvInRangeS(imgHSV, cvScalar(100, 135, 135), cvScalar(140, 255, 255), imgThreshed);
 
 	//Red
 	//cant find good color range to track
@@ -171,7 +185,7 @@ IplImage* GetThresholdedImage(IplImage* img) {
  
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "drone_image");
+  ros::init(argc, argv, "drone_colour_track");
   drone_image ic;
   ros::spin();
  

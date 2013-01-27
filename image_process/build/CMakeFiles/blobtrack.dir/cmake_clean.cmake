@@ -1,4 +1,7 @@
 FILE(REMOVE_RECURSE
+  "../msg_gen"
+  "../src/image_process/msg"
+  "../msg_gen"
   "CMakeFiles/blobtrack.dir/src/blobtrack.o"
   "../bin/blobtrack.pdb"
   "../bin/blobtrack"

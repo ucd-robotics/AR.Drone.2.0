@@ -1,0 +1,13 @@
+<launch>
+	
+	<!-- Launches the drone_colour_tracker -->
+	<node name="single_color_tracking" pkg="image_process" type="single_color_tracking" required="true">
+	<remap from="test" to="chatter"/>
+	</node>
+
+	<!-- Launches the drone_colour_tracker -->
+	<node name="single_color_tracking_reader" pkg="image_process" type="single_color_tracking_reader" required="true">
+	<remap from="test" to="chatter"/>
+	</node>
+
+</launch>
