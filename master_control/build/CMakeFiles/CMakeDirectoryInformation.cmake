@@ -38,6 +38,7 @@ SET(CMAKE_C_INCLUDE_PATH
   "/opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/include"
   "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/ardrone_autonomy/msg_gen/cpp/include"
   "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/ardrone_autonomy/srv_gen/cpp/include"
+  "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/msg_gen/cpp/include"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

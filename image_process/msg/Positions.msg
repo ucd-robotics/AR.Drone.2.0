@@ -1,2 +1,2 @@
-int16 posX
-int16 posY
+int16 PosX
+int16 PosY

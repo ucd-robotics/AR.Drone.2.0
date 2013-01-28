@@ -22,22 +22,22 @@ struct Positions_ {
   typedef Positions_<ContainerAllocator> Type;
 
   Positions_()
-  : posX(0)
-  , posY(0)
+  : PosX(0)
+  , PosY(0)
   {
   }
 
   Positions_(const ContainerAllocator& _alloc)
-  : posX(0)
-  , posY(0)
+  : PosX(0)
+  , PosY(0)
   {
   }
 
-  typedef int16_t _posX_type;
-  int16_t posX;
+  typedef int16_t _PosX_type;
+  int16_t PosX;
 
-  typedef int16_t _posY_type;
-  int16_t posY;
+  typedef int16_t _PosY_type;
+  int16_t PosY;
 
 
   typedef boost::shared_ptr< ::image_process::Positions_<ContainerAllocator> > Ptr;
@@ -68,12 +68,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::image_process::Positions_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "d45eb622e055a6c42c62b2012431a993";
+    return "335a66deadf054ffa0c4fd8a793e884c";
   }
 
   static const char* value(const  ::image_process::Positions_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0xd45eb622e055a6c4ULL;
-  static const uint64_t static_value2 = 0x2c62b2012431a993ULL;
+  static const uint64_t static_value1 = 0x335a66deadf054ffULL;
+  static const uint64_t static_value2 = 0xa0c4fd8a793e884cULL;
 };
 
 template<class ContainerAllocator>
@@ -90,8 +90,8 @@ template<class ContainerAllocator>
 struct Definition< ::image_process::Positions_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "int16 posX\n\
-int16 posY\n\
+    return "int16 PosX\n\
+int16 PosY\n\
 \n\
 ";
   }
@@ -112,8 +112,8 @@ template<class ContainerAllocator> struct Serializer< ::image_process::Positions
 {
   template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
   {
-    stream.next(m.posX);
-    stream.next(m.posY);
+    stream.next(m.PosX);
+    stream.next(m.PosY);
   }
 
   ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -131,10 +131,10 @@ struct Printer< ::image_process::Positions_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const  ::image_process::Positions_<ContainerAllocator> & v) 
   {
-    s << indent << "posX: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.posX);
-    s << indent << "posY: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.posY);
+    s << indent << "PosX: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.PosX);
+    s << indent << "PosY: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.PosY);
   }
 };
 

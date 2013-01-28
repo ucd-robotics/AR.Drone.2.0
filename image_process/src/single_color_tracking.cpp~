@@ -8,6 +8,8 @@
 #include <highgui.h>
 #include <stdio.h>
 #include <ctype.h>
+#include "geometry_msgs/Twist.h"
+#include <image_process/Positions.h>
 
 //Source: http://www.aishack.in/2010/07/tracking-colored-objects-in-opencv/
 
@@ -34,6 +36,8 @@ int main(int argc, char** argv) {
 
 	ros::init(argc, argv, "single_color_tracking");
 	ros::NodeHandle n;
+	image_process::Positions pos_msg;
+
 	// Initialize capturing live feed from the camera
 	CvCapture* capture = 0;
 	capture = cvCaptureFromCAM(0);
@@ -52,9 +56,12 @@ int main(int argc, char** argv) {
 	// the tracked positions of the ball
 	IplImage* imgScribble = NULL;
 
-	ros::NodeHandle private_node_handle_("~");
+	//ros::NodeHandle private_node_handle_("~");
 
-	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("test", 1000);
+	//ros::Publisher chatter_pub = n.advertise<std_msgs::String>("test", 1000);
+ 	//ros::Publisher chatter_pub = n.advertise<geometry_msgs::Twist>("test", 1000);   	
+ 	ros::Publisher chatter_pub = n.advertise<image_process::Positions>("test", 1000);   	
+
 	//int count = 0;
 	// An infinite loop
 	while (ros::ok()) {
@@ -117,15 +124,20 @@ int main(int argc, char** argv) {
 		cvReleaseImage(&imgYellowThresh);
 		delete moments;
 
-		private_node_handle_.param("posX", posX, int(1));
-		private_node_handle_.param("posY", posY, int(2));
-		std_msgs::String msg;
+		//private_node_handle_.param("posX", posX, int(1));
+		//private_node_handle_.param("posY", posY, int(2));
+		//std_msgs::String msg;
 	
-		std::stringstream ss;
-		ss << posX << " " << posY;
-		msg.data = ss.str();
-		chatter_pub.publish(msg);
-		ROS_INFO("%s", msg.data.c_str());
+		//std::stringstream ss;
+		//ss << posX << " " << posY;
+		//msg.data = ss.str();
+		//chatter_pub.publish(msg);
+		//ROS_INFO("%s", msg.data.c_str());
+
+ 		geometry_msgs::Twist msg;
+   		msg.linear.x = posX;
+   		msg.linear.y = posY;    
+   		chatter_pub.publish(msg);
 	}
 
 	// We're done using the camera. Other applications can now use it

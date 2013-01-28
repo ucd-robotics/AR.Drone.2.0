@@ -18,7 +18,7 @@ def splitString(data):
 # Create a callback function for the subscriber.
 def callback(msg):
 #prints the data from camera about points
-    #rospy.loginfo(" I heard %s", msg)
+    rospy.loginfo(" I heard %s", msg)
     #splitString(data)
     rospy.loginfo(" Point x:[%f]" %(msg.PosX))    
     rospy.loginfo(" Point y:[%f]" %(msg.PosY))    

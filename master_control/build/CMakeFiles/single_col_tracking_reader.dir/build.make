@@ -80,6 +80,7 @@ CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /o
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/uvc_cam/manifest.xml
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/ardrone_autonomy/manifest.xml
+CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/manifest.xml
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
@@ -87,6 +88,7 @@ CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /o
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /opt/ros/fuerte/stacks/driver_common/driver_base/msg_gen/generated
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/ardrone_autonomy/msg_gen/generated
 CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/ardrone_autonomy/srv_gen/generated
+CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/msg_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/single_col_tracking_reader.dir/src/single_color_tracking_reader.o -c /home/aaroncz/fuerte_workspace/AR.Drone.2.0/master_control/src/single_color_tracking_reader.cpp
