@@ -3,4 +3,8 @@
           POSX
           POSY-VAL
           POSY
+          SCREENX-VAL
+          SCREENX
+          SCREENY-VAL
+          SCREENY
 ))

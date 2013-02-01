@@ -6,15 +6,17 @@ import struct
 
 
 class Positions(genpy.Message):
-  _md5sum = "335a66deadf054ffa0c4fd8a793e884c"
+  _md5sum = "70cb3425bc63edba3285feecb7b2dd58"
   _type = "image_process/Positions"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """int16 PosX
 int16 PosY
+int16 ScreenX
+int16 ScreenY
 
 """
-  __slots__ = ['PosX','PosY']
-  _slot_types = ['int16','int16']
+  __slots__ = ['PosX','PosY','ScreenX','ScreenY']
+  _slot_types = ['int16','int16','int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -24,7 +26,7 @@ int16 PosY
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       PosX,PosY
+       PosX,PosY,ScreenX,ScreenY
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -37,9 +39,15 @@ int16 PosY
         self.PosX = 0
       if self.PosY is None:
         self.PosY = 0
+      if self.ScreenX is None:
+        self.ScreenX = 0
+      if self.ScreenY is None:
+        self.ScreenY = 0
     else:
       self.PosX = 0
       self.PosY = 0
+      self.ScreenX = 0
+      self.ScreenY = 0
 
   def _get_types(self):
     """
@@ -54,7 +62,7 @@ int16 PosY
     """
     try:
       _x = self
-      buff.write(_struct_2h.pack(_x.PosX, _x.PosY))
+      buff.write(_struct_4h.pack(_x.PosX, _x.PosY, _x.ScreenX, _x.ScreenY))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -67,8 +75,8 @@ int16 PosY
       end = 0
       _x = self
       start = end
-      end += 4
-      (_x.PosX, _x.PosY,) = _struct_2h.unpack(str[start:end])
+      end += 8
+      (_x.PosX, _x.PosY, _x.ScreenX, _x.ScreenY,) = _struct_4h.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -82,7 +90,7 @@ int16 PosY
     """
     try:
       _x = self
-      buff.write(_struct_2h.pack(_x.PosX, _x.PosY))
+      buff.write(_struct_4h.pack(_x.PosX, _x.PosY, _x.ScreenX, _x.ScreenY))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -96,11 +104,11 @@ int16 PosY
       end = 0
       _x = self
       start = end
-      end += 4
-      (_x.PosX, _x.PosY,) = _struct_2h.unpack(str[start:end])
+      end += 8
+      (_x.PosX, _x.PosY, _x.ScreenX, _x.ScreenY,) = _struct_4h.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_2h = struct.Struct("<2h")
+_struct_4h = struct.Struct("<4h")

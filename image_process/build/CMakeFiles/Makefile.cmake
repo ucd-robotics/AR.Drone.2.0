@@ -68,6 +68,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/drone_colour_track.dir/DependInfo.cmake"
   "CMakeFiles/drone_facetrack.dir/DependInfo.cmake"
   "CMakeFiles/face_det.dir/DependInfo.cmake"
+  "CMakeFiles/facetrack.dir/DependInfo.cmake"
   "CMakeFiles/rosbuild_precompile.dir/DependInfo.cmake"
   "CMakeFiles/rosbuild_premsgsrvgen.dir/DependInfo.cmake"
   "CMakeFiles/rospack_genmsg.dir/DependInfo.cmake"
@@ -80,6 +81,5 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test-future.dir/DependInfo.cmake"
   "CMakeFiles/test-results.dir/DependInfo.cmake"
   "CMakeFiles/test-results-run.dir/DependInfo.cmake"
-  "CMakeFiles/tester.dir/DependInfo.cmake"
   "CMakeFiles/tests.dir/DependInfo.cmake"
   )

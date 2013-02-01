@@ -9,6 +9,7 @@
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/drone_colour_track.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/drone_facetrack.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/face_det.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/facetrack.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rosbuild_precompile.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rosbuild_premsgsrvgen.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rospack_genmsg.dir
@@ -21,5 +22,4 @@
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/test-future.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/test-results.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/test-results-run.dir
-/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/tester.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/tests.dir

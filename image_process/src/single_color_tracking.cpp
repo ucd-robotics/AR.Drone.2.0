@@ -8,10 +8,8 @@
 #include <highgui.h>
 #include <stdio.h>
 #include <ctype.h>
-#include "geometry_msgs/Twist.h"
 #include <image_process/Positions.h>
 
-//Source: http://www.aishack.in/2010/07/tracking-colored-objects-in-opencv/
 
 IplImage* GetThresholdedImage(IplImage* img) {
 	// Convert the image into an HSV image

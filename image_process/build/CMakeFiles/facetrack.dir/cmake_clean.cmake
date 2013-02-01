@@ -1,5 +1,8 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/facetrack.dir/src/facetrack.o"
+  "../msg_gen"
+  "../src/image_process/msg"
+  "../msg_gen"
+  "CMakeFiles/facetrack.dir/src/facetrack_working.o"
   "../bin/facetrack.pdb"
   "../bin/facetrack"
 )

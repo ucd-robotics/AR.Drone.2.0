@@ -189,7 +189,7 @@ TOOLCHAINCONFIG:FILEPATH=TOOLCHAINCONFIG-NOTFOUND
 USERCONFIG:FILEPATH=USERCONFIG-NOTFOUND
 
 //Path to a file.
-_file_name:FILEPATH=/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/tester.cpp
+_file_name:FILEPATH=/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/blobtrack.cpp
 
 //Value Computed by CMake
 image_process_BINARY_DIR:STATIC=/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build

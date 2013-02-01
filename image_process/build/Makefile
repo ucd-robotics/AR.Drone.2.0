@@ -239,6 +239,19 @@ face_det/fast:
 .PHONY : face_det/fast
 
 #=============================================================================
+# Target rules for targets named facetrack
+
+# Build rule for target.
+facetrack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 facetrack
+.PHONY : facetrack
+
+# fast build rule for target.
+facetrack/fast:
+	$(MAKE) -f CMakeFiles/facetrack.dir/build.make CMakeFiles/facetrack.dir/build
+.PHONY : facetrack/fast
+
+#=============================================================================
 # Target rules for targets named rosbuild_precompile
 
 # Build rule for target.
@@ -395,19 +408,6 @@ test-results-run/fast:
 .PHONY : test-results-run/fast
 
 #=============================================================================
-# Target rules for targets named tester
-
-# Build rule for target.
-tester: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tester
-.PHONY : tester
-
-# fast build rule for target.
-tester/fast:
-	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/build
-.PHONY : tester/fast
-
-#=============================================================================
 # Target rules for targets named tests
 
 # Build rule for target.
@@ -496,6 +496,21 @@ src/face_det.s:
 .PHONY : src/face_det.s
 
 # target to build an object file
+src/facetrack_working.o:
+	$(MAKE) -f CMakeFiles/facetrack.dir/build.make CMakeFiles/facetrack.dir/src/facetrack_working.o
+.PHONY : src/facetrack_working.o
+
+# target to preprocess a source file
+src/facetrack_working.i:
+	$(MAKE) -f CMakeFiles/facetrack.dir/build.make CMakeFiles/facetrack.dir/src/facetrack_working.i
+.PHONY : src/facetrack_working.i
+
+# target to generate assembly for a file
+src/facetrack_working.s:
+	$(MAKE) -f CMakeFiles/facetrack.dir/build.make CMakeFiles/facetrack.dir/src/facetrack_working.s
+.PHONY : src/facetrack_working.s
+
+# target to build an object file
 src/simpleCanny.o:
 	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/src/simpleCanny.o
 .PHONY : src/simpleCanny.o
@@ -525,21 +540,6 @@ src/single_color_tracking.s:
 	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/src/single_color_tracking.s
 .PHONY : src/single_color_tracking.s
 
-# target to build an object file
-src/tester.o:
-	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tester.o
-.PHONY : src/tester.o
-
-# target to preprocess a source file
-src/tester.i:
-	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tester.i
-.PHONY : src/tester.i
-
-# target to generate assembly for a file
-src/tester.s:
-	$(MAKE) -f CMakeFiles/tester.dir/build.make CMakeFiles/tester.dir/src/tester.s
-.PHONY : src/tester.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -558,6 +558,7 @@ help:
 	@echo "... drone_facetrack"
 	@echo "... edit_cache"
 	@echo "... face_det"
+	@echo "... facetrack"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
@@ -571,7 +572,6 @@ help:
 	@echo "... test-future"
 	@echo "... test-results"
 	@echo "... test-results-run"
-	@echo "... tester"
 	@echo "... tests"
 	@echo "... src/blobtrack.o"
 	@echo "... src/blobtrack.i"
@@ -588,15 +588,15 @@ help:
 	@echo "... src/face_det.o"
 	@echo "... src/face_det.i"
 	@echo "... src/face_det.s"
+	@echo "... src/facetrack_working.o"
+	@echo "... src/facetrack_working.i"
+	@echo "... src/facetrack_working.s"
 	@echo "... src/simpleCanny.o"
 	@echo "... src/simpleCanny.i"
 	@echo "... src/simpleCanny.s"
 	@echo "... src/single_color_tracking.o"
 	@echo "... src/single_color_tracking.i"
 	@echo "... src/single_color_tracking.s"
-	@echo "... src/tester.o"
-	@echo "... src/tester.i"
-	@echo "... src/tester.s"
 .PHONY : help
 
 

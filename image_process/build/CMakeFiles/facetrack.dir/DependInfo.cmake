@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/facetrack.cpp" "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/facetrack.dir/src/facetrack.o"
+  "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/facetrack_working.cpp" "/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/facetrack.dir/src/facetrack_working.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

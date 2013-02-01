@@ -24,12 +24,16 @@ struct Positions_ {
   Positions_()
   : PosX(0)
   , PosY(0)
+  , ScreenX(0)
+  , ScreenY(0)
   {
   }
 
   Positions_(const ContainerAllocator& _alloc)
   : PosX(0)
   , PosY(0)
+  , ScreenX(0)
+  , ScreenY(0)
   {
   }
 
@@ -38,6 +42,12 @@ struct Positions_ {
 
   typedef int16_t _PosY_type;
   int16_t PosY;
+
+  typedef int16_t _ScreenX_type;
+  int16_t ScreenX;
+
+  typedef int16_t _ScreenY_type;
+  int16_t ScreenY;
 
 
   typedef boost::shared_ptr< ::image_process::Positions_<ContainerAllocator> > Ptr;
@@ -68,12 +78,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::image_process::Positions_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "335a66deadf054ffa0c4fd8a793e884c";
+    return "70cb3425bc63edba3285feecb7b2dd58";
   }
 
   static const char* value(const  ::image_process::Positions_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0x335a66deadf054ffULL;
-  static const uint64_t static_value2 = 0xa0c4fd8a793e884cULL;
+  static const uint64_t static_value1 = 0x70cb3425bc63edbaULL;
+  static const uint64_t static_value2 = 0x3285feecb7b2dd58ULL;
 };
 
 template<class ContainerAllocator>
@@ -92,6 +102,8 @@ struct Definition< ::image_process::Positions_<ContainerAllocator> > {
   {
     return "int16 PosX\n\
 int16 PosY\n\
+int16 ScreenX\n\
+int16 ScreenY\n\
 \n\
 ";
   }
@@ -114,6 +126,8 @@ template<class ContainerAllocator> struct Serializer< ::image_process::Positions
   {
     stream.next(m.PosX);
     stream.next(m.PosY);
+    stream.next(m.ScreenX);
+    stream.next(m.ScreenY);
   }
 
   ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -135,6 +149,10 @@ struct Printer< ::image_process::Positions_<ContainerAllocator> >
     Printer<int16_t>::stream(s, indent + "  ", v.PosX);
     s << indent << "PosY: ";
     Printer<int16_t>::stream(s, indent + "  ", v.PosY);
+    s << indent << "ScreenX: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.ScreenX);
+    s << indent << "ScreenY: ";
+    Printer<int16_t>::stream(s, indent + "  ", v.ScreenY);
   }
 };
 

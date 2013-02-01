@@ -5,8 +5,6 @@ CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: ../msg_gen/cpp/i
 CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: ../src/single_color_tracking.cpp
 CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: /opt/ros/fuerte/include/XmlRpcDecl.h
 CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: /opt/ros/fuerte/include/XmlRpcValue.h
-CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: /opt/ros/fuerte/include/geometry_msgs/Twist.h
-CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: /opt/ros/fuerte/include/geometry_msgs/Vector3.h
 CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: /opt/ros/fuerte/include/opencv/cv.h
 CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: /opt/ros/fuerte/include/opencv/highgui.h
 CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o: /opt/ros/fuerte/include/opencv2/calib3d/calib3d.hpp
