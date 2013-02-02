@@ -29,7 +29,7 @@ rosbuild_genmsg()
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-rosbuild_add_executable(drone_colour_track src/drone_colour_track.cpp) #WORKING! tracks yellow object from drone!
+rosbuild_add_executable(drone_colour_track src/drone_colour_track.cpp) #WORKING! tracks blue object from drone!
 rosbuild_add_executable(simpleCanny src/simpleCanny.cpp) #gets drone cam and converts image to get canny and prints both feeds
 rosbuild_add_executable(drone_facetrack src/drone_facetrack.cpp) #right now only gets drone cam, must work and fix to track face!!
 

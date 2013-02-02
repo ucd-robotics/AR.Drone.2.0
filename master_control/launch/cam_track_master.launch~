@@ -1,0 +1,14 @@
+<launch>
+
+	<!-- Launches the single_colour_tracker -->
+	<node name="single_color_tracking" pkg="image_process" type="single_color_tracking" required="true"/>
+
+	<!-- Launches the tracker reader for the x and y coordinates -->
+	<node name="single_color_tracking_reader" pkg="master_control/src" type="single_color_tracking_reader.py" required="true"/>
+
+	<!-- Launches the listener for command -->
+	<node name="listener" pkg="master_control" type="reciever.py" required="true"/>
+
+
+
+</launch>

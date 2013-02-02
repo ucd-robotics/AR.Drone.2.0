@@ -675,38 +675,38 @@ clean: CMakeFiles/simpleCanny.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/single_col_tracking.dir
+# Target rules for target CMakeFiles/single_color_tracking.dir
 
 # All Build rule for target.
-CMakeFiles/single_col_tracking.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/depend
-	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/build
+CMakeFiles/single_color_tracking.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/depend
+	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  12
-	@echo "Built target single_col_tracking"
-.PHONY : CMakeFiles/single_col_tracking.dir/all
+	@echo "Built target single_color_tracking"
+.PHONY : CMakeFiles/single_color_tracking.dir/all
 
 # Include target in all.
-all: CMakeFiles/single_col_tracking.dir/all
+all: CMakeFiles/single_color_tracking.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/single_col_tracking.dir/rule: cmake_check_build_system
+CMakeFiles/single_color_tracking.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/single_col_tracking.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/single_color_tracking.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
-.PHONY : CMakeFiles/single_col_tracking.dir/rule
+.PHONY : CMakeFiles/single_color_tracking.dir/rule
 
 # Convenience name for target.
-single_col_tracking: CMakeFiles/single_col_tracking.dir/rule
-.PHONY : single_col_tracking
+single_color_tracking: CMakeFiles/single_color_tracking.dir/rule
+.PHONY : single_color_tracking
 
 # clean rule for target.
-CMakeFiles/single_col_tracking.dir/clean:
-	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/clean
-.PHONY : CMakeFiles/single_col_tracking.dir/clean
+CMakeFiles/single_color_tracking.dir/clean:
+	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/clean
+.PHONY : CMakeFiles/single_color_tracking.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/single_col_tracking.dir/clean
+clean: CMakeFiles/single_color_tracking.dir/clean
 .PHONY : clean
 
 #=============================================================================

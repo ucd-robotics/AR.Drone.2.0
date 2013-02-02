@@ -35,6 +35,7 @@ def sendcommand(msg):
 		pub.publish("moveDown")
 	elif msg.PosY >= isDown:
 		pub.publish("moveUp")
+#need fix this line
 	elif msg.PosX == 0 and msg.PosY == 0:
 		pub.publish("object tracking not found")
 

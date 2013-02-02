@@ -114,9 +114,9 @@ public:
 		// If pressed, break out of the loop
 		exit(0);
 	}
-
+ros::Rate loop_rate(10);
 	//std_msgs::String msg1;
-	while(ros::ok){
+	while(ros::ok()){
 	//std::stringstream ss;
 	//ss << posX << " " << posY;
 	//msg1.data = ss.str();
@@ -126,8 +126,10 @@ public:
 	pos_msg.PosX = posX;
 	pos_msg.PosY = posY;
 	chatter_pub.publish(pos_msg);
+ros::spinOnce();
+loop_rate.sleep();
 }
-	cvWaitKey(2);
+	//cvWaitKey(2);
 }
 
 IplImage* GetThresholdedImage(IplImage* img) {

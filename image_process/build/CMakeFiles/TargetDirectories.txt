@@ -17,7 +17,7 @@
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rospack_genmsg_libexe.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rospack_gensrv.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/simpleCanny.dir
-/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/single_col_tracking.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/single_color_tracking.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/test.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/test-future.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/test-results.dir

@@ -343,17 +343,17 @@ simpleCanny/fast:
 .PHONY : simpleCanny/fast
 
 #=============================================================================
-# Target rules for targets named single_col_tracking
+# Target rules for targets named single_color_tracking
 
 # Build rule for target.
-single_col_tracking: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 single_col_tracking
-.PHONY : single_col_tracking
+single_color_tracking: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_color_tracking
+.PHONY : single_color_tracking
 
 # fast build rule for target.
-single_col_tracking/fast:
-	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/build
-.PHONY : single_col_tracking/fast
+single_color_tracking/fast:
+	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/build
+.PHONY : single_color_tracking/fast
 
 #=============================================================================
 # Target rules for targets named test
@@ -527,17 +527,17 @@ src/simpleCanny.s:
 
 # target to build an object file
 src/single_color_tracking.o:
-	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/src/single_color_tracking.o
+	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/src/single_color_tracking.o
 .PHONY : src/single_color_tracking.o
 
 # target to preprocess a source file
 src/single_color_tracking.i:
-	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/src/single_color_tracking.i
+	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/src/single_color_tracking.i
 .PHONY : src/single_color_tracking.i
 
 # target to generate assembly for a file
 src/single_color_tracking.s:
-	$(MAKE) -f CMakeFiles/single_col_tracking.dir/build.make CMakeFiles/single_col_tracking.dir/src/single_color_tracking.s
+	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/src/single_color_tracking.s
 .PHONY : src/single_color_tracking.s
 
 # Help Target
@@ -567,7 +567,7 @@ help:
 	@echo "... rospack_genmsg_libexe"
 	@echo "... rospack_gensrv"
 	@echo "... simpleCanny"
-	@echo "... single_col_tracking"
+	@echo "... single_color_tracking"
 	@echo "... test"
 	@echo "... test-future"
 	@echo "... test-results"

@@ -33,7 +33,7 @@ rosbuild_add_executable(drone_colour_track src/drone_colour_track.cpp) #WORKING!
 rosbuild_add_executable(simpleCanny src/simpleCanny.cpp) #gets drone cam and converts image to get canny and prints both feeds
 rosbuild_add_executable(drone_facetrack src/drone_facetrack.cpp) #right now only gets drone cam, must work and fix to track face!!
 
-rosbuild_add_executable(single_col_tracking src/single_color_tracking.cpp) #tracks blue and prints line, (comp cam)
+rosbuild_add_executable(single_color_tracking src/single_color_tracking.cpp) #tracks blue and prints line, (comp cam)
 
 rosbuild_add_executable(camshift src/camshift.cpp) #mouse click and drag to track object, (comp cam)
 
