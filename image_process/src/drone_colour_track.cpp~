@@ -114,7 +114,7 @@ public:
 		// If pressed, break out of the loop
 		exit(0);
 	}
-ros::Rate loop_rate(10);
+
 	//std_msgs::String msg1;
 	while(ros::ok()){
 	//std::stringstream ss;
@@ -126,9 +126,7 @@ ros::Rate loop_rate(10);
 	pos_msg.PosX = posX;
 	pos_msg.PosY = posY;
 	chatter_pub.publish(pos_msg);
-ros::spinOnce();
-loop_rate.sleep();
-}
+	}
 	//cvWaitKey(2);
 }
 

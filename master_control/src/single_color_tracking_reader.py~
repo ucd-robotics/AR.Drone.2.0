@@ -1,11 +1,13 @@
+#!/usr/bin/env python
 import roslib; roslib.load_manifest('image_process')
 import rospy
 from std_msgs.msg import String
 import shlex
 import tf.transformations
 from image_process.msg import Positions
+from std_msgs.msg import Empty       	 # for land/takeoff/emergency
 
-pub = rospy.Publisher('sendCommand',String)
+pub = rospy.Publisher('commandSent',String)
 
 #screen size is set to (640,480) so x and y will only come at max those coordinates.
 #these are being used to check drone location on screen and publish command to move.
@@ -27,27 +29,50 @@ def callback(msg):
 #which way it should move
 #x max = 639, y max = 479
 def sendcommand(msg):
-	if msg.PosX <= isLeft:
+	if msg.PosX <= isLeft and msg.PosX != 0:
 		pub.publish("moveRight")
 	elif msg.PosX >= isRight:
 		pub.publish("moveLeft")
-	elif msg.PosY <= isUp:
+	elif msg.PosY <= isUp and msg.PosY != 0:
 		pub.publish("moveDown")
 	elif msg.PosY >= isDown:
 		pub.publish("moveUp")
-#need fix this line
-	elif msg.PosX == 0 and msg.PosY == 0:
-		pub.publish("object tracking not found")
-
+	elif msg.PosX == 0.0 and msg.PosY == 0.0:
+		pub.publish("object not found")
 
 # This ends up being the main while loop.
 def listener():
-    rospy.init_node('single_color_tracking_reader', anonymous = True)
-    rospy.Subscriber('test', Positions, callback)
-    rospy.Subscriber('test', Positions, sendcommand)
-    rospy.spin()
+	if not rospy.is_shutdown(): 
+	    rospy.Subscriber('test', Positions, callback)
+	    rospy.Subscriber('test', Positions, sendcommand)
+	    rospy.spin()
+	else:
+	    land()
+	    rospy.loginfo(" CTRL+C PRESSED") 
+	    
 
+def takeOff():
+	rospy.sleep(15)
+	pub.publish("Takeoff")	
+	#rospy.Publisher('/ardrone/takeoff',Empty)
+
+def land():
+	rospy.sleep(30)
+	pub.publish("Land")
+	#rospy.Publisher('/ardrone/land',Empty)
+
+def emergency():
+	pub.publish("Emergency")
+	#rospy.Publisher('/ardrone/reset',Empty)
 
 # Main function.
 if __name__ == '__main__':
-    listener()
+	while not rospy.is_shutdown(): 
+		rospy.init_node('single_color_tracking_reader', anonymous = True)
+		takeOff()
+		land()
+		listener()
+
+	land()
+
+

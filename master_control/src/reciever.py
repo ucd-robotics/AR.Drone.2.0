@@ -12,7 +12,7 @@ def callback(msg):
 # This ends up being the main while loop.
 def listener():
     rospy.init_node('listener', anonymous = True)
-    rospy.Subscriber('sendCommand', String, callback)
+    rospy.Subscriber('commandSent', String, callback)
     rospy.spin()
 
 

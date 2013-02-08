@@ -1,19 +1,24 @@
+
 <launch>
 	<!-- Launches the AR.Drone driver -->
 	<node name="ardrone_driver" pkg="ardrone_autonomy" type="ardrone_driver" output="screen" clear_params="true">
 	    <param name="outdoor" value="0" /> <!-- If we are flying outdoors, will select more aggressive default settings -->
 	    <param name="flight_without_shell" value="0" /> <!-- Changes internal controller gains if we are flying without the propeller guard -->
 	    
-	    <param name="altitude_max" value="3000" /> <!-- in millimeters = 3 meters = 9' -->
-        <param name="altitude_min" value="50" /> <!-- in millimeters = 5cm = 2" -->
+	    <param name="altitude_max" value="2200" /> <!-- in millimeters = 2.2 meters -->
+        <param name="altitude_min" value="50" /> <!-- in millimeters = 50cm = 2" -->
         <param name="euler_angle_max" value="0.1" /> <!-- maximum allowable body angle in radians = 5 degrees -->
         <param name="control_vz_max" value="200" /> <!-- maximum z velocity in mm/sec = 0.2m/sec -->
 	    <param name="control_yaw" value="0.7" /> <!-- maximum rotation rate in radians/sec = 40 degrees per second (1/9 rev/sec) -->
 	</node>
 	
+	<!-- Launches the controller for the color tracking -->
+	<node name="tracker_controls" pkg="ardrone_tutorials_getting_started" type="tracker_controls.py" required="true"/>
+
 	<!-- Launches the drone_colour_tracker -->
 	<node name="drone_colour_track" pkg="image_process" type="drone_colour_track" required="true"/>
 
-
+	<!-- Launches the tracker reader for the x and y coordinates -->
+	<node name="single_color_tracking_reader" pkg="master_control" type="single_color_tracking_reader.py" required="true"/>
 
 </launch>
