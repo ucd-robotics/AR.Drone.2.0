@@ -59,24 +59,28 @@ class KeyboardController(DroneVideoDisplay):
 				# Now we handle moving, notice that this section is the opposite (+=) of the keyrelease section
 				if key == KeyMapping.YawLeft:
 					self.yaw_velocity += 1
+					rospy.loginfo(" yaw tracker yaw amount: %f", self.yaw_velocity) 
 				elif key == KeyMapping.YawRight:
 					self.yaw_velocity += -1
-
+					rospy.loginfo(" yaw tracker yaw amount: %f", self.yaw_velocity) 
 				elif key == KeyMapping.PitchForward:
 					self.pitch += 1
+					rospy.loginfo(" yaw tracker yaw amount: %f", self.pitch) 
 				elif key == KeyMapping.PitchBackward:
 					self.pitch += -1
-
+					rospy.loginfo(" yaw tracker yaw amount: %f", self.pitch) 
 				elif key == KeyMapping.RollLeft:
 					self.roll += 1
+					rospy.loginfo(" yaw tracker yaw amount: %f", self.roll) 
 				elif key == KeyMapping.RollRight:
 					self.roll += -1
-
+					rospy.loginfo(" yaw tracker yaw amount: %f", self.roll) 
 				elif key == KeyMapping.IncreaseAltitude:
 					self.z_velocity += 1
+					rospy.loginfo(" yaw tracker yaw amount: %f", self.z_velocity) 
 				elif key == KeyMapping.DecreaseAltitude:
 					self.z_velocity += -1
-
+					rospy.loginfo(" yaw tracker yaw amount: %f", self.z_velocity) 
 			# finally we set the command to be sent. The controller handles sending this at regular intervals
 			controller.SetCommand(self.roll, self.pitch, self.yaw_velocity, self.z_velocity)
 
@@ -90,24 +94,28 @@ class KeyboardController(DroneVideoDisplay):
 			# Now we handle moving, notice that this section is the opposite (-=) of the keypress section
 			if key == KeyMapping.YawLeft:
 				self.yaw_velocity -= 1
+				rospy.loginfo(" yaw tracker yaw amount: %f", self.yaw_velocity) 
 			elif key == KeyMapping.YawRight:
 				self.yaw_velocity -= -1
-
+				rospy.loginfo(" yaw tracker yaw amount: %f", self.yaw_velocity) 
 			elif key == KeyMapping.PitchForward:
 				self.pitch -= 1
+				rospy.loginfo(" yaw tracker yaw amount: %f", self.pitch) 
 			elif key == KeyMapping.PitchBackward:
 				self.pitch -= -1
-
+				rospy.loginfo(" yaw tracker yaw amount: %f", self.pitch) 
 			elif key == KeyMapping.RollLeft:
 				self.roll -= 1
+				rospy.loginfo(" yaw tracker yaw amount: %f", self.roll) 
 			elif key == KeyMapping.RollRight:
 				self.roll -= -1
-
+				rospy.loginfo(" yaw tracker yaw amount: %f", self.roll) 
 			elif key == KeyMapping.IncreaseAltitude:
 				self.z_velocity -= 1
+				rospy.loginfo(" yaw tracker yaw amount: %f", self.z_velocity) 
 			elif key == KeyMapping.DecreaseAltitude:
 				self.z_velocity -= -1
-
+				rospy.loginfo(" yaw tracker yaw amount: %f", self.z_velocity) 
 			# finally we set the command to be sent. The controller handles sending this at regular intervals
 			controller.SetCommand(self.roll, self.pitch, self.yaw_velocity, self.z_velocity)
 

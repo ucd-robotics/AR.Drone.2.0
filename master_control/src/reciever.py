@@ -15,7 +15,7 @@ def listener():
     rospy.Subscriber('commandSent', String, callback)
     rospy.spin()
 
-
 # Main function.
 if __name__ == '__main__':
     listener()
+

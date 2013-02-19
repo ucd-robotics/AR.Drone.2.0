@@ -11,11 +11,16 @@ def callback(msg):
 
 # This ends up being the main while loop.
 def listener():
+    rospy.on_shutdown(myhook)
     rospy.init_node('listener', anonymous = True)
     rospy.Subscriber('commandSent', String, callback)
     rospy.spin()
+
+def myhook():
+  rospy.loginfo("shutdown time!")
 
 
 # Main function.
 if __name__ == '__main__':
     listener()
+

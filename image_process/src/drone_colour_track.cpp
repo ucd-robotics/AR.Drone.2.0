@@ -114,7 +114,7 @@ public:
 		// If pressed, break out of the loop
 		exit(0);
 	}
-	ros::Rate loop_rate(10);
+	ros::Rate loop_rate(100);
 	//std_msgs::String msg1;
 	while(ros::ok()){
 	//std::stringstream ss;

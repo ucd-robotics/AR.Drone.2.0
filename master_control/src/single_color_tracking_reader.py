@@ -7,15 +7,16 @@ import tf.transformations
 from image_process.msg import Positions
 from std_msgs.msg import Empty       	 # for land/takeoff/emergency
 
+#this Publisher wil be used to send commands to the actual drone tracker
 pub = rospy.Publisher('commandSent',String)
 
 #screen size is set to (640,480) so x and y will only come at max those coordinates.
 #these are being used to check drone location on screen and publish command to move.
 #im using half x/y plus amount to make box in middle so if drone is there no commands sent
-isLeft =  290 #(640/2 -30)
-isRight = 350 #(640/2 +30)
-isUp = 220 #(480/2 -20)
-isDown = 260 #(480/2 +20)
+isLeft =  280 #(640/2 -40)
+isRight = 360 #(640/2 +40)
+isUp = 210 #(480/2 -30)
+isDown = 270 #(480/2 +30)
 
 # Create a callback function for the subscriber.
 def callback(msg):
@@ -34,32 +35,31 @@ def sendcommand(msg):
 	elif msg.PosX >= isRight:
 		pub.publish("moveLeft")
 	elif msg.PosY <= isUp and msg.PosY != 0:
-		pub.publish("moveDown")
-	elif msg.PosY >= isDown:
 		pub.publish("moveUp")
-	elif msg.PosX == 0.0 and msg.PosY == 0.0:
+	elif msg.PosY >= isDown:
+		pub.publish("moveDown")
+	elif (msg.PosX == 0.0 and msg.PosY == 0.0) or (msg.PosX <= isRight and msg.PosX >= isLeft and msg.PosY >= isUp and msg.PosY <= isDown):
 		pub.publish("object not found")
 
 # This ends up being the main while loop.
 def listener():
-	if not rospy.is_shutdown(): 
-	    rospy.Subscriber('test', Positions, callback)
-	    rospy.Subscriber('test', Positions, sendcommand)
-	    rospy.spin()
-	else:
-	    land()
-	    rospy.loginfo(" CTRL+C PRESSED") 
-	    
-
+    	rospy.on_shutdown(land)
+	#rospy.Subscriber('test', Positions, callback)
+	rospy.Subscriber('test', Positions, sendcommand)
+	rospy.spin()
+    
 def takeOff():
-	rospy.sleep(15)
+	rospy.sleep(3)
+	rospy.loginfo(" TOOK OFF!") 
 	pub.publish("Takeoff")	
 	#rospy.Publisher('/ardrone/takeoff',Empty)
 
 def land():
-	rospy.sleep(30)
+	rospy.sleep(8)
 	pub.publish("Land")
-	#rospy.Publisher('/ardrone/land',Empty)
+	rospy.loginfo(" CTRL+C PRESSED") 
+	rospy.loginfo(" LANDED!") 
+	rospy.Publisher('/ardrone/land',Empty)
 
 def emergency():
 	pub.publish("Emergency")
@@ -67,12 +67,10 @@ def emergency():
 
 # Main function.
 if __name__ == '__main__':
-	while not rospy.is_shutdown(): 
-		rospy.init_node('single_color_tracking_reader', anonymous = True)
-		takeOff()
-		land()
-		listener()
-
-	land()
-
+	rospy.init_node('single_color_tracking_reader', anonymous = True)
+	takeOff()
+	#land()
+	rospy.sleep(1)
+	listener()
+	
 
