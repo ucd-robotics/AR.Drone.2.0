@@ -42,7 +42,7 @@ class BasicDroneController(object):
 
 		# Setup regular publishing of control packets
 		self.command = Twist()
-		self.commandTimer = rospy.Timer(rospy.Duration(COMMAND_PERIOD/500.0),self.SendCommand)
+		self.commandTimer = rospy.Timer(rospy.Duration(COMMAND_PERIOD/100.0),self.SendCommand)
 
 		# Land the drone if we are shutting down
 		rospy.on_shutdown(self.SendLand)
@@ -72,10 +72,10 @@ class BasicDroneController(object):
 		self.command.linear.y  = roll
 		self.command.linear.z  = z_velocity
 		self.command.angular.z = yaw_velocity
-		rospy.loginfo(" tracker's pitch amount: %f", pitch) 
-		rospy.loginfo(" tracker's roll amount: %f", roll) 
-		rospy.loginfo(" tracker's atl amount: %f", self.command.linear.z) 
-		rospy.loginfo(" tracker's yaw amount: %f", self.command.angular.z) 
+		#rospy.loginfo(" tracker's pitch amount: %f", pitch) 
+		#rospy.loginfo(" tracker's roll amount: %f", roll) 
+		#rospy.loginfo(" tracker's atl amount: %f", self.command.linear.z) 
+		#rospy.loginfo(" tracker's yaw amount: %f", self.command.angular.z) 
 	def SendCommand(self,event):
 		# The previously set command is then sent out periodically if the drone is flying
 		if self.status == DroneStatus.Flying or self.status == DroneStatus.GotoHover or self.status == DroneStatus.Hovering:

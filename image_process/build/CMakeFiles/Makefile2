@@ -240,13 +240,48 @@ clean: CMakeFiles/blobtrack.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/bluetracker.dir
+
+# All Build rule for target.
+CMakeFiles/bluetracker.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/bluetracker.dir/build.make CMakeFiles/bluetracker.dir/depend
+	$(MAKE) -f CMakeFiles/bluetracker.dir/build.make CMakeFiles/bluetracker.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  6
+	@echo "Built target bluetracker"
+.PHONY : CMakeFiles/bluetracker.dir/all
+
+# Include target in all.
+all: CMakeFiles/bluetracker.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/bluetracker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/bluetracker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
+.PHONY : CMakeFiles/bluetracker.dir/rule
+
+# Convenience name for target.
+bluetracker: CMakeFiles/bluetracker.dir/rule
+.PHONY : bluetracker
+
+# clean rule for target.
+CMakeFiles/bluetracker.dir/clean:
+	$(MAKE) -f CMakeFiles/bluetracker.dir/build.make CMakeFiles/bluetracker.dir/clean
+.PHONY : CMakeFiles/bluetracker.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/bluetracker.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/camshift.dir
 
 # All Build rule for target.
 CMakeFiles/camshift.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/depend
 	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  7
 	@echo "Built target camshift"
 .PHONY : CMakeFiles/camshift.dir/all
 
@@ -312,7 +347,7 @@ clean: CMakeFiles/clean-test-results.dir/clean
 CMakeFiles/drone_colour_track.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/depend
 	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  8
 	@echo "Built target drone_colour_track"
 .PHONY : CMakeFiles/drone_colour_track.dir/all
 
@@ -347,7 +382,7 @@ clean: CMakeFiles/drone_colour_track.dir/clean
 CMakeFiles/drone_facetrack.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/depend
 	$(MAKE) -f CMakeFiles/drone_facetrack.dir/build.make CMakeFiles/drone_facetrack.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  9
 	@echo "Built target drone_facetrack"
 .PHONY : CMakeFiles/drone_facetrack.dir/all
 
@@ -382,7 +417,7 @@ clean: CMakeFiles/drone_facetrack.dir/clean
 CMakeFiles/face_det.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/face_det.dir/build.make CMakeFiles/face_det.dir/depend
 	$(MAKE) -f CMakeFiles/face_det.dir/build.make CMakeFiles/face_det.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  10
 	@echo "Built target face_det"
 .PHONY : CMakeFiles/face_det.dir/all
 
@@ -417,7 +452,7 @@ clean: CMakeFiles/face_det.dir/clean
 CMakeFiles/facetrack.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/facetrack.dir/build.make CMakeFiles/facetrack.dir/depend
 	$(MAKE) -f CMakeFiles/facetrack.dir/build.make CMakeFiles/facetrack.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  10
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  11
 	@echo "Built target facetrack"
 .PHONY : CMakeFiles/facetrack.dir/all
 
@@ -646,7 +681,7 @@ clean: CMakeFiles/rospack_gensrv.dir/clean
 CMakeFiles/simpleCanny.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/depend
 	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  12
 	@echo "Built target simpleCanny"
 .PHONY : CMakeFiles/simpleCanny.dir/all
 
@@ -681,7 +716,7 @@ clean: CMakeFiles/simpleCanny.dir/clean
 CMakeFiles/single_color_tracking.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/depend
 	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  13
 	@echo "Built target single_color_tracking"
 .PHONY : CMakeFiles/single_color_tracking.dir/all
 

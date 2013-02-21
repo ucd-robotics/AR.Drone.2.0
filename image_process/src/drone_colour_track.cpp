@@ -71,11 +71,11 @@ public:
 	}
 
 	// Holds the yellow thresholded image (yellow = white, rest = black)
-	IplImage* imgYellowThresh = GetThresholdedImage(img);
+	IplImage* imgThresh = GetThresholdedImage(img);
 
 	// Calculate the moments to estimate the position of the ball
 	CvMoments *moments = (CvMoments*) malloc(sizeof(CvMoments));
-	cvMoments(imgYellowThresh, moments, 1);
+	cvMoments(imgThresh, moments, 1);
 
 	// The actual moment values
 	double moment10 = cvGetSpatialMoment(moments, 1, 0);
@@ -104,7 +104,7 @@ public:
 
 	// Add the scribbling image and the frame...
 	cvAdd(img, imgScribble, result, NULL);
-	cvShowImage("thresh", imgYellowThresh);
+	cvShowImage("thresh", imgThresh);
 	cvShowImage("result", result);
        // cvShowImage( "ARDRONE FEED",img);
 
@@ -114,7 +114,7 @@ public:
 		// If pressed, break out of the loop
 		exit(0);
 	}
-	ros::Rate loop_rate(100);
+	ros::Rate loop_rate(50);
 	//std_msgs::String msg1;
 	while(ros::ok()){
 	//std::stringstream ss;

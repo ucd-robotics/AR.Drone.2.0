@@ -71,11 +71,11 @@ public:
 	}
 
 	// Holds the yellow thresholded image (yellow = white, rest = black)
-	IplImage* imgYellowThresh = GetThresholdedImage(img);
+	IplImage* imgThresh = GetThresholdedImage(img);
 
 	// Calculate the moments to estimate the position of the ball
 	CvMoments *moments = (CvMoments*) malloc(sizeof(CvMoments));
-	cvMoments(imgYellowThresh, moments, 1);
+	cvMoments(imgThresh, moments, 1);
 
 	// The actual moment values
 	double moment10 = cvGetSpatialMoment(moments, 1, 0);
@@ -104,9 +104,16 @@ public:
 
 	// Add the scribbling image and the frame...
 	cvAdd(img, imgScribble, result, NULL);
-	cvShowImage("thresh", imgYellowThresh);
+	cvShowImage("thresh", imgThresh);
 	cvShowImage("result", result);
        // cvShowImage( "ARDRONE FEED",img);
+
+  	CvMemStorage*  storage  = cvCreateMemStorage(0);// allocate memory to store the contour information
+  	CvSeq* contours = 0;// list contains contours.
+ 	cvFindContours( imgThresh, storage, &contours );// built in function to find contours
+ 	if( contours )
+   		 cvDrawContours(result,contours,CV_RGB(255,0,0),CV_RGB(255,0,0),100,5);// draw contours in red color.
+
 
 	// Wait for a keypress
 	int c = cvWaitKey(10);
@@ -114,7 +121,7 @@ public:
 		// If pressed, break out of the loop
 		exit(0);
 	}
-	ros::Rate loop_rate(100);
+	ros::Rate loop_rate(50);
 	//std_msgs::String msg1;
 	while(ros::ok()){
 	//std::stringstream ss;
@@ -137,7 +144,7 @@ IplImage* GetThresholdedImage(IplImage* img) {
 	IplImage* imgHSV = cvCreateImage(cvGetSize(img), 8, 3);
 	cvCvtColor(img, imgHSV, CV_BGR2HSV);
 
-	IplImage* imgThreshed = cvCreateImage(cvGetSize(img), 8, 3);
+	IplImage* imgThreshed = cvCreateImage(cvGetSize(img), 8, 1);
 
 	//Yellow
 	//cvInRangeS(imgHSV, cvScalar(20, 100, 100), cvScalar(30, 255, 255),imgThreshed);

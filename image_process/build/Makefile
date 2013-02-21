@@ -174,6 +174,19 @@ blobtrack/fast:
 .PHONY : blobtrack/fast
 
 #=============================================================================
+# Target rules for targets named bluetracker
+
+# Build rule for target.
+bluetracker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bluetracker
+.PHONY : bluetracker
+
+# fast build rule for target.
+bluetracker/fast:
+	$(MAKE) -f CMakeFiles/bluetracker.dir/build.make CMakeFiles/bluetracker.dir/build
+.PHONY : bluetracker/fast
+
+#=============================================================================
 # Target rules for targets named camshift
 
 # Build rule for target.
@@ -436,6 +449,21 @@ src/blobtrack.s:
 .PHONY : src/blobtrack.s
 
 # target to build an object file
+src/bluetracker.o:
+	$(MAKE) -f CMakeFiles/bluetracker.dir/build.make CMakeFiles/bluetracker.dir/src/bluetracker.o
+.PHONY : src/bluetracker.o
+
+# target to preprocess a source file
+src/bluetracker.i:
+	$(MAKE) -f CMakeFiles/bluetracker.dir/build.make CMakeFiles/bluetracker.dir/src/bluetracker.i
+.PHONY : src/bluetracker.i
+
+# target to generate assembly for a file
+src/bluetracker.s:
+	$(MAKE) -f CMakeFiles/bluetracker.dir/build.make CMakeFiles/bluetracker.dir/src/bluetracker.s
+.PHONY : src/bluetracker.s
+
+# target to build an object file
 src/camshift.o:
 	$(MAKE) -f CMakeFiles/camshift.dir/build.make CMakeFiles/camshift.dir/src/camshift.o
 .PHONY : src/camshift.o
@@ -552,6 +580,7 @@ help:
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... blobtrack"
+	@echo "... bluetracker"
 	@echo "... camshift"
 	@echo "... clean-test-results"
 	@echo "... drone_colour_track"
@@ -576,6 +605,9 @@ help:
 	@echo "... src/blobtrack.o"
 	@echo "... src/blobtrack.i"
 	@echo "... src/blobtrack.s"
+	@echo "... src/bluetracker.o"
+	@echo "... src/bluetracker.i"
+	@echo "... src/bluetracker.s"
 	@echo "... src/camshift.o"
 	@echo "... src/camshift.i"
 	@echo "... src/camshift.s"

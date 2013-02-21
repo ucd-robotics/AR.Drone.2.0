@@ -28,7 +28,7 @@ def callback(msg):
 
 #this will send a letter to the ardrone movement node which will tell it
 #which way it should move
-#x max = 639, y max = 479
+#x max = 640, y max = 480
 def sendcommand(msg):
 	if msg.PosX <= isLeft and msg.PosX != 0:
 		pub.publish("moveRight")
@@ -43,34 +43,24 @@ def sendcommand(msg):
 
 # This ends up being the main while loop.
 def listener():
-    	rospy.on_shutdown(land)
+    	#rospy.on_shutdown(land)
 	#rospy.Subscriber('test', Positions, callback)
 	rospy.Subscriber('test', Positions, sendcommand)
 	rospy.spin()
     
 def takeOff():
-	rospy.sleep(3)
-	rospy.loginfo(" TOOK OFF!") 
+
+	#rospy.loginfo(" TOOK OFF!") 
 	pub.publish("Takeoff")	
 	#rospy.Publisher('/ardrone/takeoff',Empty)
-
-def land():
-	rospy.sleep(8)
-	pub.publish("Land")
-	rospy.loginfo(" CTRL+C PRESSED") 
-	rospy.loginfo(" LANDED!") 
-	rospy.Publisher('/ardrone/land',Empty)
-
-def emergency():
-	pub.publish("Emergency")
-	#rospy.Publisher('/ardrone/reset',Empty)
 
 # Main function.
 if __name__ == '__main__':
 	rospy.init_node('single_color_tracking_reader', anonymous = True)
+	rospy.sleep(3)
 	takeOff()
+	rospy.sleep(3)
 	#land()
-	rospy.sleep(1)
 	listener()
 	
 

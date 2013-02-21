@@ -10,7 +10,6 @@
 #include <ctype.h>
 #include <image_process/Positions.h>
 
-//Source: http://www.aishack.in/2010/07/tracking-colored-objects-in-opencv/
 
 IplImage* GetThresholdedImage(IplImage* img) {
 	// Convert the image into an HSV image
@@ -19,10 +18,12 @@ IplImage* GetThresholdedImage(IplImage* img) {
 
 	IplImage* imgThreshed = cvCreateImage(cvGetSize(img), 8, 1);
 	//Yellow
-	//cvInRangeS(imgHSV, cvScalar(20, 100, 100), cvScalar(30, 255, 255),imgThreshed);
+	cvInRangeS(imgHSV, cvScalar(20, 100, 100), cvScalar(30, 255, 255),imgThreshed);
 
 	//blue
-	cvInRangeS(imgHSV, cvScalar(100, 135, 135), cvScalar(140, 255, 255), imgThreshed);
+	//cvInRangeS(imgHSV, cvScalar(100, 135, 135), cvScalar(140, 255, 255), imgThreshed);
+	//cvInRangeS(imgHSV, cvScalar(112, 100, 100), cvScalar(124, 255, 255), imgThreshed);
+
 
 	//Red
 	//cant find good color range to track

@@ -22,6 +22,8 @@ IplImage* GetThresholdedImage(IplImage* img) {
 
 	//blue
 	cvInRangeS(imgHSV, cvScalar(100, 135, 135), cvScalar(140, 255, 255), imgThreshed);
+	//cvInRangeS(imgHSV, cvScalar(112, 100, 100), cvScalar(124, 255, 255), imgThreshed);
+
 
 	//Red
 	//cant find good color range to track
