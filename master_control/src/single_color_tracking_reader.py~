@@ -49,16 +49,15 @@ def listener():
 	rospy.spin()
     
 def takeOff():
-
-	#rospy.loginfo(" TOOK OFF!") 
-	pub.publish("Takeoff")	
-	#rospy.Publisher('/ardrone/takeoff',Empty)
+	#pub.publish("Takeoff")	
+	rospy.Publisher('/ardrone/takeoff',Empty)
 
 # Main function.
 if __name__ == '__main__':
 	rospy.init_node('single_color_tracking_reader', anonymous = True)
 	rospy.sleep(3)
 	takeOff()
+	rospy.sleep(3)
 	#land()
 	listener()
 	

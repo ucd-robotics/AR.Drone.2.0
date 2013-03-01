@@ -213,6 +213,19 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
+# Target rules for targets named cointracker
+
+# Build rule for target.
+cointracker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cointracker
+.PHONY : cointracker
+
+# fast build rule for target.
+cointracker/fast:
+	$(MAKE) -f CMakeFiles/cointracker.dir/build.make CMakeFiles/cointracker.dir/build
+.PHONY : cointracker/fast
+
+#=============================================================================
 # Target rules for targets named drone_colour_track
 
 # Build rule for target.
@@ -479,6 +492,21 @@ src/camshift.s:
 .PHONY : src/camshift.s
 
 # target to build an object file
+src/coindetect.o:
+	$(MAKE) -f CMakeFiles/cointracker.dir/build.make CMakeFiles/cointracker.dir/src/coindetect.o
+.PHONY : src/coindetect.o
+
+# target to preprocess a source file
+src/coindetect.i:
+	$(MAKE) -f CMakeFiles/cointracker.dir/build.make CMakeFiles/cointracker.dir/src/coindetect.i
+.PHONY : src/coindetect.i
+
+# target to generate assembly for a file
+src/coindetect.s:
+	$(MAKE) -f CMakeFiles/cointracker.dir/build.make CMakeFiles/cointracker.dir/src/coindetect.s
+.PHONY : src/coindetect.s
+
+# target to build an object file
 src/drone_colour_track.o:
 	$(MAKE) -f CMakeFiles/drone_colour_track.dir/build.make CMakeFiles/drone_colour_track.dir/src/drone_colour_track.o
 .PHONY : src/drone_colour_track.o
@@ -583,6 +611,7 @@ help:
 	@echo "... bluetracker"
 	@echo "... camshift"
 	@echo "... clean-test-results"
+	@echo "... cointracker"
 	@echo "... drone_colour_track"
 	@echo "... drone_facetrack"
 	@echo "... edit_cache"
@@ -611,6 +640,9 @@ help:
 	@echo "... src/camshift.o"
 	@echo "... src/camshift.i"
 	@echo "... src/camshift.s"
+	@echo "... src/coindetect.o"
+	@echo "... src/coindetect.i"
+	@echo "... src/coindetect.s"
 	@echo "... src/drone_colour_track.o"
 	@echo "... src/drone_colour_track.i"
 	@echo "... src/drone_colour_track.s"

@@ -21,6 +21,7 @@ movement = rospy.Publisher('/cmd_vel',Twist)
 pubLand = rospy.Publisher('/ardrone/land',Empty)
 pubTakeoff = rospy.Publisher('/ardrone/takeoff',Empty)
 pubReset = rospy.Publisher('/ardrone/reset',Empty)
+
 # Create a callback function for the subscriber.
 def callback(data):
 	global yawLeftcounter
@@ -85,9 +86,9 @@ def callback(data):
 	#this section of code should check of the tilting of the drone to try stabilize it better
 		#drone tilted too much to left
 		if sb.rotX > 0:
-			twist.linear.y = -0.01; #move right(-)
+			twist.linear.y = 0.01; #move right(-)
 		elif sb.rotX < 0:
-			twist.linear.y = 0.01; #move left(+)
+			twist.linear.y = -0.01; #move left(+)
 	
 		#drone tilted forward
 		if sb.rotY > 0:
@@ -113,6 +114,7 @@ def land():
 def takeoff():
 	rospy.loginfo(" Taking off") 
 	pubTakeoff.publish(Empty())
+	rospy.Publisher('/ardrone/takeoff',Empty)
 
 def emergency():
 	rospy.loginfo(" Emergency") 

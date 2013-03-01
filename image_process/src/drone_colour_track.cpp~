@@ -108,13 +108,6 @@ public:
 	cvShowImage("result", result);
        // cvShowImage( "ARDRONE FEED",img);
 
-  	CvMemStorage*  storage  = cvCreateMemStorage(0);// allocate memory to store the contour information
-  	CvSeq* contours = 0;// list contains contours.
- 	cvFindContours( imgThresh, storage, &contours );// built in function to find contours
- 	if( contours )
-   		 cvDrawContours(result,contours,CV_RGB(255,0,0),CV_RGB(255,0,0),100,5);// draw contours in red color.
-
-
 	// Wait for a keypress
 	int c = cvWaitKey(10);
 	if (c == 27 ) {

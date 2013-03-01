@@ -114,6 +114,7 @@ def land():
 def takeoff():
 	rospy.loginfo(" Taking off") 
 	pubTakeoff.publish(Empty())
+	#rospy.Publisher('/ardrone/takeoff',Empty)
 
 def emergency():
 	rospy.loginfo(" Emergency") 

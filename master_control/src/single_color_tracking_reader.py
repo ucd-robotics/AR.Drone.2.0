@@ -49,8 +49,6 @@ def listener():
 	rospy.spin()
     
 def takeOff():
-
-	#rospy.loginfo(" TOOK OFF!") 
 	pub.publish("Takeoff")	
 	#rospy.Publisher('/ardrone/takeoff',Empty)
 

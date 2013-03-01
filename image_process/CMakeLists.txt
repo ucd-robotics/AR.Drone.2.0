@@ -35,6 +35,7 @@ rosbuild_add_executable(drone_facetrack src/drone_facetrack.cpp) #right now only
 
 rosbuild_add_executable(single_color_tracking src/single_color_tracking.cpp) #tracks blue and prints line, (comp cam)
 rosbuild_add_executable(bluetracker src/bluetracker.cpp) #tracks blue and prints red dots where blue is, (comp cam)
+rosbuild_add_executable(cointracker src/coindetect.cpp) #circle detect (comp cam)
 
 rosbuild_add_executable(camshift src/camshift.cpp) #mouse click and drag to track object, (comp cam)
 

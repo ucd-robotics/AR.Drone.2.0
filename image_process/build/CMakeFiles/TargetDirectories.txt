@@ -7,6 +7,7 @@
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/bluetracker.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/camshift.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/clean-test-results.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/cointracker.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/drone_colour_track.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/drone_facetrack.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/face_det.dir
