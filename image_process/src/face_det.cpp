@@ -78,7 +78,8 @@ void detectAndDisplay( Mat frame )
     {
       Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
       ellipse( frame, center, Size( faces[i].width/2, faces[i].height/2), 0, 0, 360, Scalar( 255, 0, 255 ), 2, 8, 0 );
-
+	printf("width = %d",faces[i].width/2);
+	printf("height = %d",faces[i].height/2);
       Mat faceROI = frame_gray( faces[i] );
       std::vector<Rect> eyes;
 

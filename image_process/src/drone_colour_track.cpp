@@ -31,7 +31,6 @@ class drone_image
   ros::Publisher pub ;
   image_transport::ImageTransport it_;    
   image_transport::Subscriber image_sub_; //image subscriber 
-  //image_transport::Publisher image_pub_; //image publisher(we subscribe to ardrone image_raw)
   std_msgs::String msg;
   image_process::Positions pos_msg;
 
@@ -40,7 +39,6 @@ public:
     : it_(nh_)
   {
      image_sub_ = it_.subscribe("/ardrone/image_raw", 1, &drone_image::imageCb, this);
-     //image_pub_= it_.advertise("/arcv/Image",1);
   }
  
   ~drone_image()
@@ -61,7 +59,6 @@ public:
 	//cvNamedWindow("video");
 	cvNamedWindow("thresh");
 
-	// This image holds the "scribble" data...
 	// the tracked positions of the ball
 	IplImage* imgScribble = NULL;
 
@@ -106,7 +103,6 @@ public:
 	cvAdd(img, imgScribble, result, NULL);
 	cvShowImage("thresh", imgThresh);
 	cvShowImage("result", result);
-       // cvShowImage( "ARDRONE FEED",img);
 
 	// Wait for a keypress
 	int c = cvWaitKey(10);
@@ -115,21 +111,13 @@ public:
 		exit(0);
 	}
 	ros::Rate loop_rate(50);
-	//std_msgs::String msg1;
 	while(ros::ok()){
-	//std::stringstream ss;
-	//ss << posX << " " << posY;
-	//msg1.data = ss.str();
-	//chatter_pub.publish(msg1);
-	//ROS_INFO("%s", msg1.data.c_str());
-
 	pos_msg.PosX = posX;
 	pos_msg.PosY = posY;
 	chatter_pub.publish(pos_msg);
 	ros::spinOnce();
 	loop_rate.sleep();
 	}
-	//cvWaitKey(2);
 }
 
 IplImage* GetThresholdedImage(IplImage* img) {
