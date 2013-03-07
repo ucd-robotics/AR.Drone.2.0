@@ -481,13 +481,48 @@ clean: CMakeFiles/face_det.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/facefind.dir
+
+# All Build rule for target.
+CMakeFiles/facefind.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/facefind.dir/build.make CMakeFiles/facefind.dir/depend
+	$(MAKE) -f CMakeFiles/facefind.dir/build.make CMakeFiles/facefind.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  12
+	@echo "Built target facefind"
+.PHONY : CMakeFiles/facefind.dir/all
+
+# Include target in all.
+all: CMakeFiles/facefind.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/facefind.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/facefind.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles 0
+.PHONY : CMakeFiles/facefind.dir/rule
+
+# Convenience name for target.
+facefind: CMakeFiles/facefind.dir/rule
+.PHONY : facefind
+
+# clean rule for target.
+CMakeFiles/facefind.dir/clean:
+	$(MAKE) -f CMakeFiles/facefind.dir/build.make CMakeFiles/facefind.dir/clean
+.PHONY : CMakeFiles/facefind.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/facefind.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/facetrack.dir
 
 # All Build rule for target.
 CMakeFiles/facetrack.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/facetrack.dir/build.make CMakeFiles/facetrack.dir/depend
 	$(MAKE) -f CMakeFiles/facetrack.dir/build.make CMakeFiles/facetrack.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  13
 	@echo "Built target facetrack"
 .PHONY : CMakeFiles/facetrack.dir/all
 
@@ -716,7 +751,7 @@ clean: CMakeFiles/rospack_gensrv.dir/clean
 CMakeFiles/simpleCanny.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/depend
 	$(MAKE) -f CMakeFiles/simpleCanny.dir/build.make CMakeFiles/simpleCanny.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  13
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  14
 	@echo "Built target simpleCanny"
 .PHONY : CMakeFiles/simpleCanny.dir/all
 
@@ -751,7 +786,7 @@ clean: CMakeFiles/simpleCanny.dir/clean
 CMakeFiles/single_color_tracking.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/depend
 	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  14
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles  15
 	@echo "Built target single_color_tracking"
 .PHONY : CMakeFiles/single_color_tracking.dir/all
 

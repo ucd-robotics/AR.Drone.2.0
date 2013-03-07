@@ -92,6 +92,7 @@ void detectAndDisplay( Mat frame )
          circle( frame, eye_center, radius, Scalar( 255, 0, 0 ), 3, 8, 0 );
        }
     }
+
    //-- Show what you got
    imshow( window_name, frame );
 }

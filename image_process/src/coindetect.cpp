@@ -33,36 +33,36 @@ int main(int argc, char** argv)
     // Initialize capturing live feed from the camera
     CvCapture* capture = 0;
     capture = cvCaptureFromCAM(0);
-    cvNamedWindow("thresh");
-while(ros::ok){
-    IplImage* img = 0;
-    img = cvQueryFrame(capture);
-    IplImage* thresh = GetThresholdedImage(img);
-
-    //IplImage* img = cvLoadImage("circle.jpg", 1);;
-    IplImage* gray = cvCreateImage(cvGetSize(img), 8, 1);
-    CvMemStorage* storage = cvCreateMemStorage(0);
-    cvCvtColor(thresh, gray, CV_BGR2GRAY);
-    cvSmooth(gray, gray, CV_GAUSSIAN, 9, 9); 
-    CvSeq* circles = cvHoughCircles(gray, storage, CV_HOUGH_GRADIENT, 2, gray->height/4, 200, 100);
-    int i;
-
-    for (i = 0; i < circles->total; i++) 
-    {
-         float* p = (float*)cvGetSeqElem( circles, i );
-         cvCircle( img, cvPoint(cvRound(p[0]),cvRound(p[1])), 
-             3, CV_RGB(0,255,0), -1, 8, 0 );
-         cvCircle( img, cvPoint(cvRound(p[0]),cvRound(p[1])), 
-             cvRound(p[2]), CV_RGB(255,0,0), 3, 8, 0 );
-    }
+    //cvNamedWindow("thresh");
     cvNamedWindow( "circles", 1 );
-    cvShowImage( "circles", img );
-		int c = cvWaitKey(10);
-		while(c != -1) {
-			// If pressed, break out of the loop
-			break;
-		}
-   }
-   cvReleaseCapture(&capture);
+    int c = cvWaitKey(10);
+    while(c != -1) {
+	// If pressed, break out of the loop
+	break;
+    }
+    while(ros::ok()){
+    	IplImage* img = 0;
+    	img = cvQueryFrame(capture);
+    	//IplImage* thresh = GetThresholdedImage(img);
+
+    	//IplImage* img = cvLoadImage("circle.jpg", 1);;
+    	IplImage* gray = cvCreateImage(cvGetSize(img), 8, 1);
+    	CvMemStorage* storage = cvCreateMemStorage(0);
+    	cvCvtColor(img	, gray, CV_BGR2GRAY);
+    	cvSmooth(gray, gray, CV_GAUSSIAN, 9, 9); 
+    	CvSeq* circles = cvHoughCircles(gray, storage, CV_HOUGH_GRADIENT, 2, gray->height/4, 200, 100);
+    	int i;
+
+    	for (i = 0; i < circles->total; i++) 
+    	{
+    	     float* p = (float*)cvGetSeqElem( circles, i );
+    	     cvCircle( img, cvPoint(cvRound(p[0]),cvRound(p[1])), 3, CV_RGB(0,255,0), -1, 8, 0 );
+    	     cvCircle( img, cvPoint(cvRound(p[0]),cvRound(p[1])), cvRound(p[2]), CV_RGB(255,0,0), 3, 8, 0 );
+    	}
+
+    	cvShowImage( "circles", gray );
+
+    }
+    cvReleaseCapture(&capture);
     return 0;
 }

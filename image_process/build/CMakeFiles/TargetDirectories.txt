@@ -11,6 +11,7 @@
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/drone_colour_track.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/drone_facetrack.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/face_det.dir
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/facefind.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/facetrack.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rosbuild_precompile.dir
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles/rosbuild_premsgsrvgen.dir

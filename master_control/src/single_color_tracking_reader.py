@@ -48,16 +48,16 @@ def listener():
 	rospy.Subscriber('test', Positions, sendcommand)
 	rospy.spin()
     
-def takeOff():
-	pub.publish("Takeoff")	
+#def takeOff():
+	#pub.publish("Takeoff")	
 	#rospy.Publisher('/ardrone/takeoff',Empty)
 
 # Main function.
 if __name__ == '__main__':
 	rospy.init_node('single_color_tracking_reader', anonymous = True)
-	rospy.sleep(3)
-	takeOff()
-	rospy.sleep(3)
+	#rospy.sleep(3)
+	#takeOff()
+	#rospy.sleep(3)
 	#land()
 	listener()
 	

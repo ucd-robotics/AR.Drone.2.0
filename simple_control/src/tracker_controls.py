@@ -47,7 +47,7 @@ def callback(data):
 			twist.linear.x = 0; 
 			twist.linear.y = 0; 
 			twist.linear.z = 0;
-			twist.angular.z = -0.1; #turn left(-)
+			twist.angular.z = -0.3; #turn left(-)
 			rospy.loginfo(" moving left") 
 
 		#check if drone got turn right command
@@ -55,14 +55,14 @@ def callback(data):
 			twist.linear.x = 0; 
 			twist.linear.y = 0;
 			twist.linear.z = 0; 
-			twist.angular.z = 0.1; #turn right(+)
+			twist.angular.z = 0.3; #turn right(+)
 			rospy.loginfo(" moving right") 
 
 		#check if drone got increase height command
 		elif command == checkCommand.IncreaseAltitude:
 			twist.linear.x = 0; 
 			twist.linear.y = 0; 
-			twist.linear.z = 0.2; #move up(+)
+			twist.linear.z = 0.3; #move up(+)
 			twist.angular.z = 0; 
 			rospy.loginfo(" moving up") 
 
@@ -70,7 +70,7 @@ def callback(data):
 		elif command == checkCommand.DecreaseAltitude:
 			twist.linear.x = 0; 
 			twist.linear.y = 0; 
-			twist.linear.z = -0.2; #move down(-)
+			twist.linear.z = -0.3; #move down(-)
 			twist.angular.z = 0;
 			rospy.loginfo(" moving down") 
 
@@ -86,15 +86,19 @@ def callback(data):
 	#this section of code should check of the tilting of the drone to try stabilize it better
 		#drone tilted too much to left
 		if sb.rotX > 0:
-			twist.linear.y = 0.01; #move right(-)
+			rospy.loginfo(" sb.rotX = [%f]" %(sb.rotX))
+			twist.linear.y = 0.02; #move right(-)
 		elif sb.rotX < 0:
-			twist.linear.y = -0.01; #move left(+)
+			rospy.loginfo(" sb.rotX = [%f]" %(sb.rotX))
+			twist.linear.y = -0.02; #move left(+)
 	
 		#drone tilted forward
 		if sb.rotY > 0:
-			twist.linear.x = -0.01; #move back (-)
+			rospy.loginfo(" sb.rotY = [%f]" %(sb.rotY))
+			twist.linear.x = -0.02; #move back (-)
 		elif sb.rotY < 0:
-			twist.linear.x = 0.01; #move forward(+)
+			rospy.loginfo(" sb.rotY = [%f]" %(sb.rotY))
+			twist.linear.x = 0.02; #move forward(+)
 
 
 		# send commands to the drone for what movement to do	

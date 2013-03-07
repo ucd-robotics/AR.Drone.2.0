@@ -28,12 +28,10 @@ ros/macros.h
 ros/assert.h
 ../msg_gen/cpp/include/image_process/ros/assert.h
 
-/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/drone_facetrack.cpp
+/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/test.cpp
 ros/ros.h
 -
 stdio.h
--
-string.h
 -
 iostream
 -
@@ -49,8 +47,6 @@ opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
 -
-opencv2/objdetect/objdetect.hpp
-/home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/opencv2/objdetect/objdetect.hpp
 opencv/cv.h
 -
 opencv/highgui.h

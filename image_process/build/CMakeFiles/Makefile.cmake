@@ -70,6 +70,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/drone_colour_track.dir/DependInfo.cmake"
   "CMakeFiles/drone_facetrack.dir/DependInfo.cmake"
   "CMakeFiles/face_det.dir/DependInfo.cmake"
+  "CMakeFiles/facefind.dir/DependInfo.cmake"
   "CMakeFiles/facetrack.dir/DependInfo.cmake"
   "CMakeFiles/rosbuild_precompile.dir/DependInfo.cmake"
   "CMakeFiles/rosbuild_premsgsrvgen.dir/DependInfo.cmake"

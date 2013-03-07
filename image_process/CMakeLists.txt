@@ -31,7 +31,7 @@ rosbuild_genmsg()
 
 rosbuild_add_executable(drone_colour_track src/drone_colour_track.cpp) #WORKING! tracks blue object from drone!
 rosbuild_add_executable(simpleCanny src/simpleCanny.cpp) #gets drone cam and converts image to get canny and prints both feeds
-rosbuild_add_executable(drone_facetrack src/drone_facetrack.cpp) #right now only gets drone cam, must work and fix to track face!!
+rosbuild_add_executable(drone_facetrack src/drone_facetrack.cpp) #WORKING! Can find a face and save image in current directory!!
 
 rosbuild_add_executable(single_color_tracking src/single_color_tracking.cpp) #tracks blue and prints line, (comp cam)
 rosbuild_add_executable(bluetracker src/bluetracker.cpp) #tracks blue and prints red dots where blue is, (comp cam)
@@ -41,6 +41,8 @@ rosbuild_add_executable(camshift src/camshift.cpp) #mouse click and drag to trac
 
 rosbuild_add_executable(face_det src/face_det.cpp) #tracks face and prints circle on face an eyes (comp cam)
 rosbuild_add_executable(facetrack src/facetrack_working.cpp) #tracks face (comp cam)
+
+rosbuild_add_executable(facefind src/test.cpp) #tracks face (comp cam)
 
 rosbuild_add_executable(blobtrack src/blobtrack.cpp) #needs arguments when running
 

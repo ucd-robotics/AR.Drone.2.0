@@ -265,6 +265,19 @@ face_det/fast:
 .PHONY : face_det/fast
 
 #=============================================================================
+# Target rules for targets named facefind
+
+# Build rule for target.
+facefind: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 facefind
+.PHONY : facefind
+
+# fast build rule for target.
+facefind/fast:
+	$(MAKE) -f CMakeFiles/facefind.dir/build.make CMakeFiles/facefind.dir/build
+.PHONY : facefind/fast
+
+#=============================================================================
 # Target rules for targets named facetrack
 
 # Build rule for target.
@@ -596,6 +609,21 @@ src/single_color_tracking.s:
 	$(MAKE) -f CMakeFiles/single_color_tracking.dir/build.make CMakeFiles/single_color_tracking.dir/src/single_color_tracking.s
 .PHONY : src/single_color_tracking.s
 
+# target to build an object file
+src/test.o:
+	$(MAKE) -f CMakeFiles/facefind.dir/build.make CMakeFiles/facefind.dir/src/test.o
+.PHONY : src/test.o
+
+# target to preprocess a source file
+src/test.i:
+	$(MAKE) -f CMakeFiles/facefind.dir/build.make CMakeFiles/facefind.dir/src/test.i
+.PHONY : src/test.i
+
+# target to generate assembly for a file
+src/test.s:
+	$(MAKE) -f CMakeFiles/facefind.dir/build.make CMakeFiles/facefind.dir/src/test.s
+.PHONY : src/test.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -616,6 +644,7 @@ help:
 	@echo "... drone_facetrack"
 	@echo "... edit_cache"
 	@echo "... face_det"
+	@echo "... facefind"
 	@echo "... facetrack"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
@@ -661,6 +690,9 @@ help:
 	@echo "... src/single_color_tracking.o"
 	@echo "... src/single_color_tracking.i"
 	@echo "... src/single_color_tracking.s"
+	@echo "... src/test.o"
+	@echo "... src/test.i"
+	@echo "... src/test.s"
 .PHONY : help
 
 
