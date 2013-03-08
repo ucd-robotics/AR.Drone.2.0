@@ -7,7 +7,4 @@
 	<!-- Launches the tracker reader for the x and y coordinates -->
 	<node name="drone_facetrack" pkg="image_process" type="drone_facetrack" required="true"/>
 
-	<!-- Launches the controller for the color tracking -->
-	<node name="tracker_controls" pkg="simple_control" type="tracker_controls.py" required="true"/>
-
 </launch>

@@ -44,10 +44,53 @@ include CMakeFiles/ROSBUILD_genmsg_py.dir/progress.make
 
 CMakeFiles/ROSBUILD_genmsg_py: ../src/image_process/msg/__init__.py
 
+../src/image_process/msg/__init__.py: ../src/image_process/msg/_faceInfo.py
 ../src/image_process/msg/__init__.py: ../src/image_process/msg/_Positions.py
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/image_process/msg/__init__.py"
-	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --initpy /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/msg/Positions.msg
+	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --initpy /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/msg/faceInfo.msg /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/msg/Positions.msg
+
+../src/image_process/msg/_faceInfo.py: ../msg/faceInfo.msg
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/roslib/bin/gendeps
+../src/image_process/msg/_faceInfo.py: ../manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/roslib/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/roslang/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/roscpp/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/rosconsole/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/message_filters/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/image_common/image_transport/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/vision_opencv/opencv2/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/vision_opencv/cv_bridge/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/bullet/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/rospy/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/rostest/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/roswtf/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/common_rosdeps/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/image_common/camera_calibration_parsers/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/image_common/camera_info_manager/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/rosservice/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/dynamic_reconfigure/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/diagnostic_msgs/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/share/std_msgs/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/diagnostics/diagnostic_updater/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/diagnostics/self_test/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/driver_common/driver_base/manifest.xml
+../src/image_process/msg/_faceInfo.py: /home/aaroncz/fuerte_workspace/AR.Drone.2.0/uvc_cam/manifest.xml
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
+../src/image_process/msg/_faceInfo.py: /opt/ros/fuerte/stacks/driver_common/driver_base/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/image_process/msg/_faceInfo.py"
+	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/msg/faceInfo.msg
 
 ../src/image_process/msg/_Positions.py: ../msg/Positions.msg
 ../src/image_process/msg/_Positions.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
@@ -87,12 +130,13 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/image_process/msg/__init__.py
 ../src/image_process/msg/_Positions.py: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
 ../src/image_process/msg/_Positions.py: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
 ../src/image_process/msg/_Positions.py: /opt/ros/fuerte/stacks/driver_common/driver_base/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/image_process/msg/_Positions.py"
 	/opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py --noinitpy /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/msg/Positions.msg
 
 ROSBUILD_genmsg_py: CMakeFiles/ROSBUILD_genmsg_py
 ROSBUILD_genmsg_py: ../src/image_process/msg/__init__.py
+ROSBUILD_genmsg_py: ../src/image_process/msg/_faceInfo.py
 ROSBUILD_genmsg_py: ../src/image_process/msg/_Positions.py
 ROSBUILD_genmsg_py: CMakeFiles/ROSBUILD_genmsg_py.dir/build.make
 .PHONY : ROSBUILD_genmsg_py

@@ -4,6 +4,7 @@ FILE(REMOVE_RECURSE
   "../msg_gen"
   "CMakeFiles/ROSBUILD_genmsg_py"
   "../src/image_process/msg/__init__.py"
+  "../src/image_process/msg/_faceInfo.py"
   "../src/image_process/msg/_Positions.py"
 )
 

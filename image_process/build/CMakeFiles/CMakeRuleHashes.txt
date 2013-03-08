@@ -1,8 +1,11 @@
 # Hashes of file build rules.
 42fac22fdcf8b12a943e1016a7c7e4d6 ../msg_gen/cpp/include/image_process/Positions.h
+1379b8a4c5390e859c4b034150e22725 ../msg_gen/cpp/include/image_process/faceInfo.h
 f47be71e97ef629d650ec050c53a140f ../msg_gen/lisp/Positions.lisp
+b659af5b5130a12d63848df21f86fdc9 ../msg_gen/lisp/faceInfo.lisp
 e9a76bdeab30904ae32ac33f0f8b52f3 ../src/image_process/msg/_Positions.py
-fda109514ec6e8a2efe648cc37fc2737 ../src/image_process/msg/__init__.py
+eb0b3cc698f1bcc92b3130b33ad95918 ../src/image_process/msg/__init__.py
+9569b8b600e7ee3c2010000050463aac ../src/image_process/msg/_faceInfo.py
 bc6aa5bd15076d3b53373ca541213275 CMakeFiles/ROSBUILD_genmsg_cpp
 bc6aa5bd15076d3b53373ca541213275 CMakeFiles/ROSBUILD_genmsg_lisp
 bc6aa5bd15076d3b53373ca541213275 CMakeFiles/ROSBUILD_genmsg_py

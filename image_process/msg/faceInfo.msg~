@@ -1,0 +1,4 @@
+int16 centerPointX
+int16 centerPointY
+int16 width
+int16 height

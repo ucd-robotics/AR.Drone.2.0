@@ -16,7 +16,7 @@
 #include <math.h>
 #include <cxcore.h>
 #include <highgui.h>
-#include <image_process/Positions.h>
+#include <image_process/faceInfo.h>
 
 /*here is a simple program which demonstrates the use of ros and opencv to do image manipulations on video streams given out as image topics from the monocular vision of robots,here the device used is a ardrone(quad-rotor).*/
  
@@ -42,7 +42,7 @@ class drone_image
   image_transport::Subscriber image_sub_; //image subscriber 
   //image_transport::Publisher image_pub_; //image publisher(we subscribe to ardrone image_raw)
   //std_msgs::String msg;
-  image_process::Positions pos_msg;
+  image_process::faceInfo face_info;
   std::vector<Rect> faces;
   Mat frame_gray;
 
@@ -65,7 +65,7 @@ public:
   sensor_msgs::CvBridge bridge;//we need this object bridge for facilitating conversion from ros-img to opencv
   IplImage *img = bridge.imgMsgToCv(msg,"bgr8");  //image being converted from ros to opencv using cvbridge
 
-  ros::Publisher chatter_pub = n.advertise<image_process::Positions>("test", 1000);   	
+  ros::Publisher chatter_pub = n.advertise<image_process::faceInfo>("face_track", 1000);   	
 
   Mat frame(img);
   //-- 1. Load the cascades
@@ -78,10 +78,12 @@ public:
       else
        { printf(" --(!) No captured frame -- Break!");}
 
+      chatter_pub.publish(face_info);
       int c = waitKey(10);
       if( (char)c == 'c' ) { 
 	exit(0); 
 	}
+
 
 }
 
@@ -95,20 +97,34 @@ void detectAndDisplay( Mat frame )
    //-- Detect faces
    face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(50, 50) );
    
-   printf("No face!)\n");
+
+   //no face found so all sizes = 0
+   if(faces.size() == 0){
+      printf("No face!\n");
+      face_info.centerPointX = 0;
+      face_info.centerPointY = 0;
+      face_info.size = 0;
+   }
 
    for( size_t i = 0; i < faces.size(); i++ )
     {
-
-	ostringstream os;
-	os << imagecounter << " face.png";
-	string name = os.str();
+      //this names the name to save the image of a face if found.
+      ostringstream os;
+      os << imagecounter << " face.png";
+      string name = os.str();
+      //this command saves the image in current directory.
       imwrite( name, frame );
-      //cvSaveImage(name, &(IplImage(frame)));
+
       imagecounter += 1;
       printf("We have a face!!)\n");
       Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
+      
+      //faceInfo message information stored here
+      face_info.centerPointX = faces[i].x + faces[i].width/2;
+      face_info.centerPointY = faces[i].y + faces[i].height/2;
+      face_info.size = faces[i].width;
 
+      circle( frame, center, 1, CV_RGB(255,0,0), -1, 8,0);
       ellipse( frame, center, Size( faces[i].width/2, faces[i].height/2), 0, 0, 360, Scalar( 255, 0, 255 ), 2, 8, 0 );
 
       Mat faceROI = frame_gray( faces[i] );
@@ -124,7 +140,6 @@ void detectAndDisplay( Mat frame )
          circle( frame, eye_center, radius, Scalar( 255, 0, 0 ), 3, 8, 0 );
        }
     }
-
    //-- Show what you got
    imshow( window_name, frame );
 }
@@ -134,6 +149,7 @@ int main(int argc, char** argv)
 {
   ros::init(argc, argv, "face_track");
   drone_image ic;
+
   ros::spin();
  
   return 0;

@@ -3,6 +3,7 @@ FILE(REMOVE_RECURSE
   "../src/image_process/msg"
   "../msg_gen"
   "CMakeFiles/ROSBUILD_genmsg_cpp"
+  "../msg_gen/cpp/include/image_process/faceInfo.h"
   "../msg_gen/cpp/include/image_process/Positions.h"
 )
 

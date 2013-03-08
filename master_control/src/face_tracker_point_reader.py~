@@ -4,7 +4,7 @@ import rospy
 from std_msgs.msg import String
 import shlex
 import tf.transformations
-from image_process.msg import Positions
+from image_process.msg import faceInfo
 from std_msgs.msg import Empty       	 # for land/takeoff/emergency
 
 #this Publisher wil be used to send commands to the actual drone tracker
@@ -17,35 +17,41 @@ isLeft =  280 #(640/2 -40)
 isRight = 360 #(640/2 +40)
 isUp = 210 #(480/2 -30)
 isDown = 270 #(480/2 +30)
+size = 90 #random width and height
 
 # Create a callback function for the subscriber.
 def callback(msg):
 #prints the data from camera about points
-    #rospy.loginfo(" I heard %s", msg)
-    rospy.loginfo(" Point x:[%f]" %(msg.PosX))    
-    rospy.loginfo(" Point y:[%f]" %(msg.PosY))    
-    #rospy.loginfo("Linear Components: [%f, %f]"%(msg.linear.x, msg.linear.y))
+    rospy.loginfo(" Point x:[%f]" %(msg.centerPointX))    
+    rospy.loginfo(" Point y:[%f]" %(msg.centerPointY))    
+    rospy.loginfo(" width :[%f]" %(msg.width))    
+    rospy.loginfo(" height :[%f]" %(msg.height)) 
+    rospy.loginfo(" ") 
 
 #this will send a letter to the ardrone movement node which will tell it
 #which way it should move
 #x max = 640, y max = 480
 def sendcommand(msg):
-	if msg.PosX <= isLeft and msg.PosX != 0:
+	if msg.centerPointX <= isLeft and msg.centerPointX != 0:
 		pub.publish("moveRight")
-	elif msg.PosX >= isRight:
+	elif msg.centerPointX >= isRight:
 		pub.publish("moveLeft")
-	elif msg.PosY <= isUp and msg.PosY != 0:
+	elif msg.centerPointY <= isUp and msg.centerPointY != 0:
 		pub.publish("moveUp")
-	elif msg.PosY >= isDown:
+	elif msg.centerPointY >= isDown:
 		pub.publish("moveDown")
-	elif (msg.PosX == 0.0 and msg.PosY == 0.0) or (msg.PosX <= isRight and msg.PosX >= isLeft and msg.PosY >= isUp and msg.PosY <= isDown):
+	elif (msg.centerPointX == 0.0 and msg.centerPointY == 0.0) or (msg.centerPointX <= isRight and msg.centerPointX >= isLeft and msg.centerPointY >= isUp and msg.centerPointY <= isDown):
 		pub.publish("object not found")
+	elif msg.size > size:
+		pub.publish("moveBackward")
+	elif msg.size < size:
+		pub.publish("moveForward")
 
 # This ends up being the main while loop.
 def listener():
     	rospy.on_shutdown(land)
-	#rospy.Subscriber('test', Positions, callback)
-	rospy.Subscriber('test', Positions, sendcommand)
+	#rospy.Subscriber('face_track', faceInfo, callback)
+	rospy.Subscriber('face_track', faceInfo, sendcommand)
 	rospy.spin()
     
 def takeOff():
@@ -58,10 +64,10 @@ def land():
 
 # Main function.
 if __name__ == '__main__':
-	rospy.init_node('single_color_tracking_reader', anonymous = True)
-	rospy.sleep(3)
-	takeOff()
-	rospy.sleep(3)
+	rospy.init_node('face_tracker_point_reader', anonymous = True)
+	#rospy.sleep(3)
+	#takeOff()
+	#rospy.sleep(3)
 	#land()
 	listener()
 	

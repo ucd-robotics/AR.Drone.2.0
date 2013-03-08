@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+../msg_gen/cpp/include/image_process/faceInfo.h
+string
+-
+vector
+-
+map
+-
+ostream
+-
+ros/serialization.h
+../msg_gen/cpp/include/image_process/ros/serialization.h
+ros/builtin_message_traits.h
+../msg_gen/cpp/include/image_process/ros/builtin_message_traits.h
+ros/message_operations.h
+../msg_gen/cpp/include/image_process/ros/message_operations.h
+ros/time.h
+../msg_gen/cpp/include/image_process/ros/time.h
+ros/macros.h
+../msg_gen/cpp/include/image_process/ros/macros.h
+ros/assert.h
+../msg_gen/cpp/include/image_process/ros/assert.h
+
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/face_det.cpp
 ros/ros.h
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/ros/ros.h
@@ -17,6 +39,8 @@ opencv2/highgui/highgui.hpp
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
 /home/aaroncz/fuerte_workspace/AR.Drone.2.0/image_process/src/opencv2/imgproc/imgproc.hpp
+image_process/faceInfo.h
+-
 iostream
 -
 stdio.h

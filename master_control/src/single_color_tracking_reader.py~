@@ -43,21 +43,25 @@ def sendcommand(msg):
 
 # This ends up being the main while loop.
 def listener():
-    	#rospy.on_shutdown(land)
+    	rospy.on_shutdown(land)
 	#rospy.Subscriber('test', Positions, callback)
 	rospy.Subscriber('test', Positions, sendcommand)
 	rospy.spin()
     
 def takeOff():
-	#pub.publish("Takeoff")	
-	#rospy.Publisher('/ardrone/takeoff',Empty)
+	pub.publish("Takeoff")	
+	rospy.Publisher('/ardrone/takeoff',Empty)
+
+def land():
+	pub.publish("Land")	
+	rospy.Publisher('/ardrone/land',Empty)
 
 # Main function.
 if __name__ == '__main__':
 	rospy.init_node('single_color_tracking_reader', anonymous = True)
 	rospy.sleep(3)
-	#takeOff()
-	#rospy.sleep(3)
+	takeOff()
+	rospy.sleep(3)
 	#land()
 	listener()
 	

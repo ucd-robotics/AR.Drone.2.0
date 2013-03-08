@@ -74,6 +74,21 @@ def callback(data):
 			twist.angular.z = 0;
 			rospy.loginfo(" moving down") 
 
+		#check if drone got decrease height command
+		elif command == checkCommand.DecreaseAltitude:
+			twist.linear.x = -0.3; #move back(-)
+			twist.linear.y = 0; 
+			twist.linear.z = 0; 
+			twist.angular.z = 0;
+			rospy.loginfo(" moving backwards") 
+		#check if drone got decrease height command
+		elif command == checkCommand.DecreaseAltitude:
+			twist.linear.x = 0.3; #move forward (+)
+			twist.linear.y = 0; 
+			twist.linear.z = 0; 
+			twist.angular.z = 0;
+			rospy.loginfo(" moving forwards") 
+
 		#if no commands found, drone should hover
 		#this works by setting all movement to 0 
 		elif command == checkCommand.NoTracking:
@@ -86,20 +101,11 @@ def callback(data):
 	#this section of code should check of the tilting of the drone to try stabilize it better
 		#drone tilted too much to left
 		if sb.rotX > 0:
-			rospy.loginfo(" sb.rotX = [%f]" %(sb.rotX))
+			#rospy.loginfo(" sb.rotX = [%f]" %(sb.rotX))
 			twist.linear.y = 0.02; #move right(-)
 		elif sb.rotX < 0:
-			rospy.loginfo(" sb.rotX = [%f]" %(sb.rotX))
+			#rospy.loginfo(" sb.rotX = [%f]" %(sb.rotX))
 			twist.linear.y = -0.02; #move left(+)
-	
-		#drone tilted forward
-		if sb.rotY > 0:
-			rospy.loginfo(" sb.rotY = [%f]" %(sb.rotY))
-			twist.linear.x = -0.02; #move back (-)
-		elif sb.rotY < 0:
-			rospy.loginfo(" sb.rotY = [%f]" %(sb.rotY))
-			twist.linear.x = 0.02; #move forward(+)
-
 
 		# send commands to the drone for what movement to do	
 	   	movement.publish(twist)
@@ -130,6 +136,8 @@ def handle_empty(req):
 
 #we define a class to check what command has come from the colour tracker node
 class checkCommand(object):
+	PitchForward     = "moveForward"
+	PitchBackward    = "moveBackward"
 	IncreaseAltitude = "moveUp"
 	DecreaseAltitude = "moveDown"
 	YawLeft          = "moveLeft"
@@ -146,9 +154,8 @@ class stabilizer(object):
 		self.subNavdata = rospy.Subscriber('/ardrone/navdata',Navdata,self.ReceiveNavdata) 
 	
 	def ReceiveNavdata(self,navdata):
-		# Although there is a lot of data in this packet, only listening to rotX, rotY and state
+		# Although there is a lot of data in this packet, only listening to rotX and state
 		self.rotX = navdata.rotX
-		self.rotY = navdata.rotY
 		self.state = navdata.state
 
 # Setup the application

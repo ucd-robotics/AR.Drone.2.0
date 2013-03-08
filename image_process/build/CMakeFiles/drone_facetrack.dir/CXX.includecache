@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../msg_gen/cpp/include/image_process/Positions.h
+../msg_gen/cpp/include/image_process/faceInfo.h
 string
 -
 vector
@@ -65,7 +65,7 @@ cxcore.h
 -
 highgui.h
 -
-image_process/Positions.h
+image_process/faceInfo.h
 -
 
 /opt/ros/fuerte/include/XmlRpcDecl.h
