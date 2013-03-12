@@ -29,4 +29,3 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-rosbuild_add_executable(single_col_tracking_reader src/single_color_tracking_reader.cpp) #tracks blue and prints line, (comp cam)

@@ -65,8 +65,8 @@ def land():
 # Main function.
 if __name__ == '__main__':
 	rospy.init_node('face_tracker_point_reader', anonymous = True)
-	#rospy.sleep(3)
-	#takeOff()
+	rospy.sleep(3)
+	takeOff()
 	#rospy.sleep(3)
 	#land()
 	listener()

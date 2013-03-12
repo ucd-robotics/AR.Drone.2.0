@@ -105,15 +105,22 @@ void detectAndDisplay( Mat frame )
       face_info.centerPointY = 0;
       face_info.size = 0;
    }
+//size_t i = 1;
+//if(faces.size() == 1)
+//{
 
    for( size_t i = 0; i < faces.size(); i++ )
     {
-
+	if(faces.size() > 1)
+	{
+	}else{
+      //this names the name to save the image of a face if found.
       ostringstream os;
       os << imagecounter << " face.png";
       string name = os.str();
+      //this command saves the image in current directory.
       imwrite( name, frame );
-      //cvSaveImage(name, &(IplImage(frame)));
+
       imagecounter += 1;
       printf("We have a face!!)\n");
       Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
@@ -138,6 +145,7 @@ void detectAndDisplay( Mat frame )
          int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
          circle( frame, eye_center, radius, Scalar( 255, 0, 0 ), 3, 8, 0 );
        }
+	}
     }
    //-- Show what you got
    imshow( window_name, frame );

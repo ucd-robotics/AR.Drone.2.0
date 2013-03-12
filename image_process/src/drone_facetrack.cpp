@@ -105,9 +105,15 @@ void detectAndDisplay( Mat frame )
       face_info.centerPointY = 0;
       face_info.size = 0;
    }
+//size_t i = 1;
+//if(faces.size() == 1)
+//{
 
    for( size_t i = 0; i < faces.size(); i++ )
     {
+	if(faces.size() > 1)
+	{
+	}else if(faces.size() == 1){
       //this names the name to save the image of a face if found.
       ostringstream os;
       os << imagecounter << " face.png";
@@ -139,6 +145,7 @@ void detectAndDisplay( Mat frame )
          int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
          circle( frame, eye_center, radius, Scalar( 255, 0, 0 ), 3, 8, 0 );
        }
+	}
     }
    //-- Show what you got
    imshow( window_name, frame );

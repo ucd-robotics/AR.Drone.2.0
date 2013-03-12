@@ -28,7 +28,7 @@ image_process::faceInfo face_info;
 string window_name = "Capture - Face detection";
 RNG rng(12345);
 int imagecounter = 0;
-  ros::Publisher chatter_pub = n.advertise<image_process::faceInfo>("face_track", 1000);   	
+
 /**
 * @function main
 */
@@ -37,6 +37,7 @@ int main( int argc, char** argv	 )
 
   ros::init(argc, argv, "face_track");
   ros::NodeHandle n;
+  ros::Publisher chatter_pub = n.advertise<image_process::faceInfo>("face_track", 1000);   	
   CvCapture* capture;
   Mat frame;
 

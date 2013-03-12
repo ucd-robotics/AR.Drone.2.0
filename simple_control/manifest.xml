@@ -9,6 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/simple_control</url>
   <depend package="ardrone_autonomy"/>
+  <depend package="image_process"/>
 
 </package>
 

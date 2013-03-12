@@ -28,7 +28,7 @@ image_process::faceInfo face_info;
 string window_name = "Capture - Face detection";
 RNG rng(12345);
 int imagecounter = 0;
-
+  ros::Publisher chatter_pub = n.advertise<image_process::faceInfo>("face_track", 1000);   	
 /**
 * @function main
 */
@@ -39,7 +39,7 @@ int main( int argc, char** argv	 )
   ros::NodeHandle n;
   CvCapture* capture;
   Mat frame;
-  ros::Publisher chatter_pub = n.advertise<image_process::faceInfo>("face_track", 1000);   	
+
   //-- 1. Load the cascades
   if( !face_cascade.load( face_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
   if( !eyes_cascade.load( eyes_cascade_name ) ){ printf("--(!)Error loading\n"); return -1; };
